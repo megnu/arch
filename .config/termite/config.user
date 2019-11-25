@@ -1,0 +1,93 @@
+[options]
+#https://github.com/thestinger/termite/blob/master/config
+allow_bold = true
+audible_bell = false
+browser = xdg-open
+clickable_url = true
+cursor_blink = system
+cursor_shape = block
+dynamic_title = true
+filter_unmatched_urls = true
+font = Monospace 12
+geometry = 900x650
+highlight = #2f2f2f
+icon_name = terminal
+modify_other_keys = false
+mouse_autohide = false
+scroll_on_output = false
+scroll_on_keystroke = true
+scrollback_lines = 15000
+size_hints = false
+search_wrap = true
+urgent_on_bell = true
+
+[hints]
+#font = Monospace 12
+#foreground = #dcdccc
+#background = #3f3f3f
+#active_foreground = #e68080
+#active_background = #3f3f3f
+#padding = 2
+#border = #3f3f3f
+#border_width = 10
+#roundness = 2.0
+
+############################################################
+#### You can change the color coding to your liking
+#### There is a folder themes in ~/config/termite/themes
+#### Copy/paste the colors from one of the 79+ templates to this one
+#### A backup of the original config termite is present
+############################################################
+#### Use websites to make the terminal your own
+#### https://terminal.sexy
+#### https://critical.ch/xterm/
+############################################################
+
+[colors]
+# Base16 Cupcake
+# Author: Chris Kempson (http://chriskempson.com)
+
+foreground      = #f3f4f5
+foreground_bold = #d27389
+cursor          = #d27389
+background      = #2f343f
+
+# 16 color space
+
+# Black, Gray, Silver, White
+color0  = #fbf1f2
+color8  = #bfb9c6
+color7  = #8b8198
+color15 = #585062
+
+# Red
+color1  = #D57E85
+color9  = #D57E85
+
+# Green
+color2  = #A3B367
+color10 = #A3B367
+
+# Yellow
+color3  = #DCB16C
+color11 = #DCB16C
+
+# Blue
+color4  = #7297B9
+color12 = #7297B9
+
+# Purple
+color5  = #BB99B4
+color13 = #BB99B4
+
+# Teal
+color6  = #69A9A7
+color14 = #69A9A7
+
+# Extra colors
+color16 = #EBB790
+color17 = #BAA58C
+color18 = #f2f1f4
+color19 = #d8d5dd
+color20 = #a59daf
+color21 = #72677E

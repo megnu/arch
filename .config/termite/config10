@@ -1,0 +1,53 @@
+## Termite Styling Program
+## Author : Aditya Shakya
+
+[options]
+
+allow_bold = true
+audible_bell = true
+browser = xdg-open
+clickable_url = true
+cursor_blink = off
+cursor_shape = block
+dynamic_title = true
+filter_unmatched_urls = true
+font = IBMPlexMono 10
+geometry = 480x280
+icon_name = terminal
+modify_other_keys = false
+mouse_autohide = false
+scroll_on_output = false
+scroll_on_keystroke = true
+scrollback_lines = 15000
+size_hints = false
+search_wrap = true
+urgent_on_bell = true
+#highlight = #D7D75F
+
+[colors]
+
+# https://github.com/chriskempson/base16-xresources/blob/master/base16-apathy.light.256.xresources
+# Base16 Apathy
+# Scheme: Jannik Siebert (https://github.com/janniks)
+
+
+
+foreground=   #FFFFFF
+background=   #000000
+#cursor = #89D273
+color0 = #000000
+color1 = #430C12
+color2 = #89d273
+color3 = #d2cc73
+color4 = #0f2422
+color5 = #8c73d2
+color6 = #7389d2
+color7 = #e882bb
+color8 = #141414
+color9 = #D27587
+color10 = #73d28c
+color11 = #d29c73
+color12 = #73d2bc
+color13 = #d27389
+color14 = #4bcba0
+color15 = #ffffff
