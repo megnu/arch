@@ -76,12 +76,12 @@ alias fixpng="find . -type f -name "*.png" -exec convert {} -strip {} \;"
 alias fc='sudo fc-cache -fv'
 
 #copy/paste all content of /etc/skel over to home folder - Beware
-alias skel='cp -rf /etc/skel/* ~'
+#alias skel='cp -rf /etc/skel/* ~'
 #backup contents of /etc/skel to hidden backup folder in home/user
-alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
+#alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
 
 #copy bashrc-latest over on bashrc - cb= copy bash
-alias cb="cp ~/.bashrc-latest ~/.bashrc && source ~/.bashrc"
+#alias cb="cp ~/.bashrc-latest ~/.bashrc && source ~/.bashrc"
 
 #quickly kill conkies
 alias kc='killall conky'
