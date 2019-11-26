@@ -93,7 +93,7 @@ module-margin-right = 3
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = "BebasNeue-Regular:size=13;0"
-font-1 = "FontAwesome5Pro-Solid:style=Solid:size=13;0"
+font-1 = "FontAwesome5Free-Solid:style=Solid:size=13;0"
 font-2 = "ThaiSansNeue-UltraBold:size=15;0"
 font-3 = "BebasNeue-Regular:size=13;0"
 font-4 = "la-solid-900:size=13;0"
