@@ -96,7 +96,7 @@ font-0 = "BebasNeue-Regular:size=13;0"
 font-1 = "FontAwesome5Free-Solid:style=Solid:size=13;0"
 font-2 = "ThaiSansNeue-UltraBold:size=15;0"
 font-3 = "BebasNeue-Regular:size=13;0"
-font-4 = "la-solid-900:size=13;0"
+
 modules-left = bspwm xwindow
 modules-center = 
 modules-right = date cpu2 memory2 battery pavolume
