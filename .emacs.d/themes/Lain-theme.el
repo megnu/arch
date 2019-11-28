@@ -1,6 +1,3 @@
-
-
-
 ;;; Lain-theme.el --- Emacs theme with a dark background.
 
 ;; Copyright (C) 2014 , Lain
@@ -37,19 +34,19 @@
        (fg2 "#e8e8e8")
        (fg3 "#d1d1d1")
        (fg4 "#bbbbbb")
-       (bg1 "##E6000000")
-       (bg2 "##181818")
+       (bg1 "##")
+       (bg2 "##")
        (bg3 "#282828")
        (bg4 "#393939")
        (key2 "#ec90c2")
        (key3 "#cc73a4")
        (builtin "#7389d2")
        (keyword "#e882bb")
-       (const   "#ffffff")
+       (const   "#D28C73")
        (comment "#d2cc73")
        (func    "#8c73d2")
        (str     "#89d273")
-       (type    "#ffffff")
+       (type    "#BC73D2")
        (var     "#73d2bc")
        (warning "#30e60b"))
    (custom-theme-set-faces
@@ -110,7 +107,9 @@
 	`(org-verbatim ((,class (:foreground ,fg4))))
         `(org-document-info-keyword ((,class (:foreground ,func))))
 	`(font-latex-bold-face ((,class (:foreground ,type))))
-	`(font-latex-italic-face ((,class (:foreground ,key3 :italic t))))
+	`(org-document-info ((t (:foreground ,str))))
+    `(org-document-title ((t (:foreground, var))))
+    `(font-latex-italic-face ((,class (:foreground ,key3 :italic t))))
 	`(font-latex-string-face ((,class (:foreground ,str))))
 	`(font-latex-match-reference-keywords ((,class (:foreground ,const))))
 	`(font-latex-match-variable-keywords ((,class (:foreground ,var))))
