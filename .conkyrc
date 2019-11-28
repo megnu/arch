@@ -92,15 +92,15 @@ conky.config = {
 
 	default_color = '#ff0000',  				-- default color and border color
 	color1 = '#FFFFFF',
-	color2 = '#E882BB',
-	color3 = '#D29C73',
+	color2 = '#D273B9',
+	color3 = '#D28C73',
 	color4 = '#D27389',
-	color5 = '#D2CC73',
+	color5 = '#D2BC73',
 	color6 = '#BC73D2',
 
 	--Signal Colours
-	color7 = '#89D273',  						--green
-	color8 = '#73D28C',  						--orange
+	color7 = '#B9D273',  						--green
+	color8 = '#89D273',  						--orange
 	color9 = '#F1544B',  						--firebrick
 
 
@@ -121,7 +121,7 @@ ${color5}${hr}${color}
 ${color5}${alignc}C H I C A G O${color}
 ${color1}${alignc}${tztime America/Chicago %H:%M}${color}
 ${color5}${hr}${color}
-${color5}${hr}${color}
+${color3}${hr}${color}
 ${color3}${alignc}D E N V E R${color}
 ${color1}${alignc}${tztime America/Denver %H:%M}${color}
 ${color3}${hr}${color}

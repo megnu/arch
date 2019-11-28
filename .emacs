@@ -20,6 +20,12 @@
 (setq org-log-done t)
 (setq org-html-doctype "html5"
       org-html-html5-fancy t)
+;; `with-eval-after-load' macro was introduced in Emacs 24.x
+;; In older Emacsen, you can do the same thing with `eval-after-load'
+;; and '(progn ..) form.
+(with-eval-after-load 'org       
+  (setq org-startup-indented t) ; Enable `org-indent-mode' by default
+  (add-hook 'org-mode-hook #'visual-line-mode))
 ;; set default tab char's display width to 4 spaces
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4) ; emacs 23.1 to 26 default to 8
@@ -48,10 +54,10 @@
  '(custom-enabled-themes (quote (Lain)))
  '(custom-safe-themes
    (quote
-    ("a7d7ff45e670e805c4d257a8c453d2cecfeeeff5cc4156f786b2562b74036761" "94caf9515c6fb5af8727f2014f8e5bfb74cbed1595527eb44a0ba63982ecf6a0" "e39688a85d6219762f1df8a7195fb2840ce8aa4b21866fae7b204b098a64f7eb" "177749a29235db515838d135b33dae0b36649e98c7b899b77151283bbd75ec18" "7e9c8c9c93b654110c4613affa5b227fd062aafaf3763a6c5b5a0241e78981b9" "f96181468c7cc2e834024f399527f05803e42801713dee9c179e018f60bf588e" "40f4b80101a16338342431b1ebb4fc05b4e13c06acefd74c9c3092ad5b8c8407" "eaeb7e97aa03783de0d169d494e8327fed452384a846102609731549abb8675a" "2362410e0be77919ea85f64d8cc35ff26b54fabf0923fa7ff5b3c9c277331ecc" default)))
+    ("91d365048d230de1ae29eb63bb95fe2d826e818e7565587e50244a02e880dee0" "41d5de494685bb431207bc65505bd76979368e56197b49afb4dfad5bf2ad7fa7" "bc4d55d3c1ba9d7b1e4f6bb996610966cf6661b0f7ba330433847a9f8d4a0250" "14222d1c3ccc305e9488885de0af782b5b3546468afc7d1105e8b90378eeb4e3" "dfaf398d9e982b993fa2f97775e016113f7d5f20d10e0eedf012522c8b82e7a6" "b593596a021fc901475cbe04d23383c7aec9cc2a0d1555e5c41659afb0a36ef4" "1811a5de7bf800fdc7b778206a14a6044b82df9d71c37747510ae854b3f5f2d8" "760bca450f8e4cb4f2f68b220b4adddd5e66d0d97e9ec76b92a64e69839838d1" "90bb520e4e3d42bfac3b45e2bfbd180dbf467d0fe028d5986fb4f27034c9c745" "f30cfaca81277a3ce2c1820e2d765ad985b21484a3651e03785835e6a2eeaab7" "1a9d45b92c7f84361f514b711a9de55cb2016f327c1012220132849736e9b7e9" "a994d8c0d7b1e792d42c4f2add57c081fa23ee0d1c8744801ff50c698a15f4ad" "5ac66e5c86d75cf16fb5b55ddad68e697c98e3b696b0ed81068b1bc788212ddf" "75cf8e5a868373d7bfa69e34c696218ea93fce65910060b85d576ae498ed2b18" "5e3b2d229f01c5e6f3541973f37221c96fb3ceaed07b3247ebc2cc07fe480666" "46449a707671604758c6849b766e860d26304060deb47bd396a90fb74aee28ee" "a7d7ff45e670e805c4d257a8c453d2cecfeeeff5cc4156f786b2562b74036761" "94caf9515c6fb5af8727f2014f8e5bfb74cbed1595527eb44a0ba63982ecf6a0" "e39688a85d6219762f1df8a7195fb2840ce8aa4b21866fae7b204b098a64f7eb" "177749a29235db515838d135b33dae0b36649e98c7b899b77151283bbd75ec18" "7e9c8c9c93b654110c4613affa5b227fd062aafaf3763a6c5b5a0241e78981b9" "f96181468c7cc2e834024f399527f05803e42801713dee9c179e018f60bf588e" "40f4b80101a16338342431b1ebb4fc05b4e13c06acefd74c9c3092ad5b8c8407" "eaeb7e97aa03783de0d169d494e8327fed452384a846102609731549abb8675a" "2362410e0be77919ea85f64d8cc35ff26b54fabf0923fa7ff5b3c9c277331ecc" default)))
  '(package-selected-packages
    (quote
-    (pdf-tools ox-pandoc ## magit pandoc-mode dictionary fontawesome helm))))
+    (tramp-term pdf-tools ox-pandoc ## magit pandoc-mode dictionary fontawesome helm))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -64,4 +70,5 @@
   (or (server-running-p)
    (server-start))
   (add-hook 'find-file-hook 'delete-other-windows)
+  (require 'tramp-term)
 
