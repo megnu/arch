@@ -137,7 +137,7 @@ ws-icon-6 = 7;
 ws-icon-7 = 8;
 ws-icon-8 = 9;
 ws-icon-9 = 10;
-ws-icon-default = " "
+ws-icon-default = " "
 
 
 format = <label-state> <label-mode>
@@ -358,7 +358,7 @@ interval = 1
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = "  "
-format-prefix-foreground = #4BCBA0
+format-prefix-foreground = #73D2BC
 #format-underline = #30E60B
 
 label-font = 0
@@ -391,12 +391,11 @@ date = " %a %d %b +"
 time = %H:%M
 
 format-prefix = " "
-format-prefix-foreground = #73D28C
+format-prefix-foreground = #73D275
 #format-underline = #30E60B
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 label = %date% %time%
-time
 
 #################################################################
 
@@ -586,7 +585,7 @@ label = %percentage_used%%
 
 format = Mem <label>
 format-prefix = "  "
-format-prefix-foreground = #7389D2
+format-prefix-foreground = #73A1D2
 #format-underline = #30E60B
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}

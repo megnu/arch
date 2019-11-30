@@ -42,7 +42,7 @@ super + F9
 super + F10
     keepassxc
 
-#font manager
+#update
 super + F11
     font-manager
 
@@ -70,7 +70,7 @@ super + s
 super + w
     bspc node --state \~floating
 
-#termite floating
+#termite terminal
 super + t
     bspc rule -a Termite -o desktop=focused state=floating && termite -c /home/blacklung/.config/termite/config10
 
@@ -184,7 +184,7 @@ super + shift + x
 super + shift + z
     slimlock
 
-#termite
+#xfce4 term 
 super + shift + t
     termite
 

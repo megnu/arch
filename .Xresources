@@ -14,31 +14,46 @@ xterm*wideChars: true
 xterm*showMissingGlyphs: true
 xterm*selectToClipboard: true
 xterm*dynamicColors: true
-xterm*cursorBlink: true
+xterm*cursorBlink: false
 xterm*saveLines: 2000
 xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
 xterm*termName: xterm-color
 xterm*eightBitInput: false
 xterm*foreground: #FFFFFF
 xterm*background: #000000
-xterm*color0: #000000
-xterm*color1: #D28C73
-xterm*color2: #89d273
-xterm*color3: #B9D273
-xterm*color4: #7389D2
-xterm*color5: #BC73D2
-xterm*color6: #8C73D2
-xterm*color7: #D2E6E2
-xterm*color8: #141414
-xterm*color9: #d27389
-xterm*color10: #73d28c
-xterm*color11: #D2BC73
-xterm*color12: #73B9D2
-xterm*color13: #D273B9
-xterm*color14: #73D2BC
-xterm*color15: #ffffff
+
+xterm*color0:                #000000
+xterm*color8:                #141414
+
+!red dark/light
+xterm*color1:                #430C12
+xterm*color9:                #D2A473
+
+!green dark/light
+xterm*color2:                #8C73D2
+xterm*color10:               #73D275
+
+!yellow dark/light
+xterm*color3:                #2D191D
+xterm*color11:               #B9D273
+
+!blue dark/light
+xterm*color4:                #0F2422
+xterm*color12:               #73A1D2
+
+!magenta dark/light
+xterm*color5:                #D27389
+xterm*color13:               #D273D0
+
+!cyan dark/light
+xterm*color6:                #D2E6E2
+xterm*color14:               #73D2BC
+
+!white dark/light
+xterm*color7:                #FCE0E9
+xterm*color15:               #FFFFFF
 xterm*boldMode: false
-xterm*.cursorColor: #89D273
+xterm*.cursorColor:  #73D275
 
 
 ! ------------------------------------------------------------------------------
@@ -65,8 +80,8 @@ URxvt*background:        rgba:0000/0000/0200/c800
 URxvt*foreground:        #FFFFFF
 URxvt*underlineColor:    #73D2BC
 URxvt*highlightColor:    #73D2BC
-URxvt*throughColor:      Pink
-URxvt*cursorColor:       #89D273
+URxvt*throughColor:      #D2E6E2
+URxvt*cursorColor:       #D2E6E2
 URxvt*scrollBar:         false
 URxvt*scrollTtyOutput:   true
 URxvt*scrollWithBuffer:  true
@@ -80,25 +95,39 @@ URxvt*colorIT:      	 #87af5f
 URxvt*colorBD:      	 #c5c8c6
 URxvt*colorUL:      	 #D27389
 
-
 ! colors
-URxvt*color0: #000000
-URxvt*color1: #D28C73
-URxvt*color2: #89d273
-URxvt*color3: #B9D273
-URxvt*color4: #7389D2
-URxvt*color5: #BC73D2
-URxvt*color6: #8C73D2
-URxvt*color7: #D2E6E2
-URxvt*color8: #141414
-URxvt*color9: #d27389
-URxvt*color10: #73d28c
-URxvt*color11: #D2BC73
-URxvt*color12: #73B9D2
-URxvt*color13: #D273B9
-URxvt*color14: #73D2BC
-URxvt*color15: #ffffff
+!black dark/light
+URxvt*color0:                #000000
+URxvt*color8:                #141414
 
+!red dark/light
+URxvt*color1:                #430C12
+URxvt*color9:                #D2A473
+
+!green dark/light
+URxvt*color2:                #8C73D2
+URxvt*color10:               #73D275
+
+!yellow dark/light
+URxvt*color3:                #2D191D
+URxvt*color11:               #B9D273
+
+!blue dark/light
+URxvt*color4:                #0F2422
+URxvt*color12:               #73A1D2
+
+!magenta dark/light
+URxvt*color5:                #D27389
+URxvt*color13:               #D273D0
+
+!cyan dark/light
+URxvt*color6:                #D2E6E2
+URxvt*color14:               #73D2BC
+
+!white dark/light
+URxvt*color7:                #FCE0E9
+URxvt*color15:               #FFFFFF
+ 
 ! fonts
 URxvt*letterSpace: 	    		-1
 URxvt*font:                 	xft:IBMPlexMono:regular:size=10
@@ -151,7 +180,7 @@ URxvt*buffered:         false
 UXTerm*termName: xterm-256color
 
 
-UXTerm*cursorColor:        white
+UXTerm*cursorColor:        #73D275
 UXTerm*VT100.geometry:     90x30
 UXTerm*font:               IBMPlexMono
 UXTerm*faceSize:           10
@@ -168,24 +197,40 @@ UXTerm*multiScroll:        true
 UXTerm*toolBar:            false
 
 ! fix colors
+
 UXTerm*background: rgb:63/63/63
 UXTerm*foreground: rgb:00/00/00
-UXTerm*color0: #000000
-UXTerm*color1: #D28C73
-UXTerm*color2: #89d273
-UXTerm*color3: #B9D273
-UXTerm*color4: #7389D2
-UXTerm*color5: #BC73D2
-UXTerm*color6: #8C73D2
-UXTerm*color7: #D2E6E2
-UXTerm*color8: #141414
-UXTerm*color9: #d27389
-UXTerm*color10: #73d28c
-UXTerm*color11: #D2BC73
-UXTerm*color12: #73B9D2
-UXTerm*color13: #D273B9
-UXTerm*color14: #73D2BC
-UXTerm*color15: #ffffff
+
+UXTerm*color0:                #000000
+UXTerm*color8:                #141414
+
+!red dark/light
+UXTerm*color1:                #430C12
+UXTerm*color9:                #D2A473
+
+!green dark/light
+UXTerm*color2:                #8C73D2
+UXTerm*color10:               #73D275
+
+!yellow dark/light
+UXTerm*color3:                #2D191D
+UXTerm*color11:               #B9D273
+
+!blue dark/light
+UXTerm*color4:                #0F2422
+UXTerm*color12:               #73A1D2
+
+!magenta dark/light
+UXTerm*color5:                #D27389
+UXTerm*color13:               #D273D0
+
+!cyan dark/light
+UXTerm*color6:                #D2E6E2
+UXTerm*color14:               #73D2BC
+
+!white dark/light
+UXTerm*color7:                #FCE0E9
+UXTerm*color15:               #FFFFFF
 UXTerm*boldMode: false
 UXTerm*colorBDMode: true
 UXTerm*colorBD: rgb:3f/3f/3f
