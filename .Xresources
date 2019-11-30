@@ -1,9 +1,6 @@
 ! ------------------------------------------------------------------------------
 ! xterm ohia theme
 ! ------------------------------------------------------------------------------
-! 
-! ------------------------------------------------------------------------------
-
 xterm*faceName: IBMPlexMono
 xterm*loginShell: true
 xterm*vt100*geometry: 90x34
@@ -21,47 +18,36 @@ xterm*termName: xterm-color
 xterm*eightBitInput: false
 xterm*foreground: #FFFFFF
 xterm*background: #000000
-
+! colors
+!black dark/light
 xterm*color0:                #000000
 xterm*color8:                #141414
-
 !red dark/light
 xterm*color1:                #430C12
 xterm*color9:                #D2A473
-
 !green dark/light
 xterm*color2:                #8C73D2
 xterm*color10:               #73D275
-
 !yellow dark/light
 xterm*color3:                #2D191D
 xterm*color11:               #B9D273
-
 !blue dark/light
 xterm*color4:                #0F2422
 xterm*color12:               #73A1D2
-
 !magenta dark/light
 xterm*color5:                #D27389
 xterm*color13:               #D273D0
-
 !cyan dark/light
 xterm*color6:                #D2E6E2
 xterm*color14:               #73D2BC
-
 !white dark/light
 xterm*color7:                #FCE0E9
 xterm*color15:               #FFFFFF
-xterm*boldMode: false
-xterm*.cursorColor:  #73D275
-
-
+xterm*boldMode:              false
+xterm*.cursorColor:          #73D275
 ! ------------------------------------------------------------------------------
 ! URxvt ohia theme - Reload with xrdb -merge ~/.Xresources
 ! ------------------------------------------------------------------------------
-
-
-
 ! general settings
 URxvt*saveLines:         20000
 URxvt*termName:         xterm-256color
@@ -71,11 +57,10 @@ URxvt*iso14755:         false
 URxvt*iso14755_52:      false
 URxvt*meta8:            false
 URxvt*metaSendsEscape:  true
-
 ! appearance
 URxvt*depth:             32
-URxvt*transparent:      false
-URxvt*shading:          0
+URxvt*transparent:       false
+URxvt*shading:           0
 URxvt*background:        rgba:0000/0000/0200/c800
 URxvt*foreground:        #FFFFFF
 URxvt*underlineColor:    #73D2BC
@@ -94,40 +79,31 @@ URxvt*externalBorder:    0
 URxvt*colorIT:      	 #87af5f
 URxvt*colorBD:      	 #c5c8c6
 URxvt*colorUL:      	 #D27389
-
 ! colors
 !black dark/light
 URxvt*color0:                #000000
 URxvt*color8:                #141414
-
 !red dark/light
 URxvt*color1:                #430C12
 URxvt*color9:                #D2A473
-
 !green dark/light
 URxvt*color2:                #8C73D2
 URxvt*color10:               #73D275
-
 !yellow dark/light
 URxvt*color3:                #2D191D
 URxvt*color11:               #B9D273
-
 !blue dark/light
 URxvt*color4:                #0F2422
 URxvt*color12:               #73A1D2
-
 !magenta dark/light
 URxvt*color5:                #D27389
 URxvt*color13:               #D273D0
-
 !cyan dark/light
 URxvt*color6:                #D2E6E2
 URxvt*color14:               #73D2BC
-
 !white dark/light
 URxvt*color7:                #FCE0E9
 URxvt*color15:               #FFFFFF
- 
 ! fonts
 URxvt*letterSpace: 	    		-1
 URxvt*font:                 	xft:IBMPlexMono:regular:size=10
@@ -136,11 +112,8 @@ URxvt*boldFont:             	xft:IBMPlexMono:bold:size=10
 URxvt*italicFont:           	xft:IBMPlexMono:italic:size=10
 URxvt*boldItalicFont:     		xft:IBMPlexMono:regular:size=10
 ! run :.!fc-list | grep <font-name>
-
 ! perl extensions
 URxvt*perl-ext-common:  default,clipboard,url-select,keyboard-select,resize-font
-!URxvt*perl-ext-common:  default,clipboard,url-select,keyboard-select,tabbed
-
 ! macros for clipboard and selection
 URxvt*copyCommand:      xclip -i -selection clipboard
 URxvt*pasteCommand:     xclip -o -selection clipboard
@@ -156,30 +129,19 @@ URxvt*urlLauncher:      firefox
 URxvt*underlineURLs:    true
 URxvt*urlButton:        1
 URxvt*geometry: 		90x30
-
 ! tabbed
 URxvt*tabbed.tabbar-fg: 4
 URxvt*tabbed.tabbar-bg: 16
 URxvt*tabbed.tab-fg:    15
 URxvt*tabbed.tab-bg:    4
 URxvt*buffered:         false
-! URxvt*keysym.Control-Shift-C: perl:clipboard:copy
-! URxvt*keysym.Control-Shift-V: perl:clipboard:paste
-
-
-
-
-
+URxvt*keysym.Control-Shift-C: perl:clipboard:copy
+URxvt*keysym.Control-Shift-V: perl:clipboard:paste
 ! ------------------------------------------------------------------------------
 ! UXTerm ohia theme
 ! ------------------------------------------------------------------------------
-
-
-
 ! termtype
 UXTerm*termName: xterm-256color
-
-
 UXTerm*cursorColor:        #73D275
 UXTerm*VT100.geometry:     90x30
 UXTerm*font:               IBMPlexMono
@@ -195,39 +157,31 @@ UXTerm*rightScrollBar:     false
 UXTerm*jumpScroll:         true
 UXTerm*multiScroll:        true
 UXTerm*toolBar:            false
-
 ! fix colors
-
-UXTerm*background: rgb:63/63/63
-UXTerm*foreground: rgb:00/00/00
-
-UXTerm*color0:                #000000
-UXTerm*color8:                #141414
-
+UXTerm*background:         rgb:63/63/63
+UXTerm*foreground:         rgb:00/00/00
+! colors
+!black dark/light
+UXTerm*color0:             #000000
+UXTerm*color8:             #141414
 !red dark/light
 UXTerm*color1:                #430C12
 UXTerm*color9:                #D2A473
-
 !green dark/light
 UXTerm*color2:                #8C73D2
 UXTerm*color10:               #73D275
-
 !yellow dark/light
 UXTerm*color3:                #2D191D
 UXTerm*color11:               #B9D273
-
 !blue dark/light
 UXTerm*color4:                #0F2422
 UXTerm*color12:               #73A1D2
-
 !magenta dark/light
 UXTerm*color5:                #D27389
 UXTerm*color13:               #D273D0
-
 !cyan dark/light
 UXTerm*color6:                #D2E6E2
 UXTerm*color14:               #73D2BC
-
 !white dark/light
 UXTerm*color7:                #FCE0E9
 UXTerm*color15:               #FFFFFF
