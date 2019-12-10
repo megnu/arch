@@ -5,8 +5,8 @@ Comment=A flat theme with transparent elements
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Arc
-MetacityTheme=Arc
-IconTheme=ohia
+GtkTheme=ohia
+MetacityTheme=ohia
+IconTheme=lehua
 CursorTheme=DMZ-Black
 ButtonLayout=menu:minimize,maximize,close
