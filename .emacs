@@ -41,6 +41,30 @@
         (untabify (match-beginning 0) (match-end 0)))
       (when (looking-at "^    ")
         (replace-match "")))))
+(setq org-src-fontify-natively t)
+(setq org-src-tab-acts-natively t)
+(add-to-list 'ispell-skip-region-alist '(":\\(PROPERTIES\\|LOGBOOK\\):" . ":END:"))
+(add-to-list 'ispell-skip-region-alist '("#\\+BEGIN_SRC" . "#\\+END_SRC"))
+(add-to-list 'ispell-skip-region-alist '("#\\+BEGIN_EXAMPLE" . "#\\+END_EXAMPLE"))
+(setq org-export-with-smart-quotes t)
+(setq org-ascii-links-to-notes nil)
+(setq org-ascii-headline-spacing (quote (1 . 1)))
+(eval-after-load "org"
+  '(require 'ox-gfm nil t))
+(setq org-html-coding-system 'utf-8-unix)
+(setq org-html-table-default-attributes
+      '(:border "0" :cellspacing "0" :cellpadding "3" :rules "none" :frame "none"))
+(require 'subr-x)
+
+(defun org-html-fixed-width (fixed-width _contents _info)
+  "Transcode a FIXED-WIDTH element from Org to HTML.
+CONTENTS is nil.  INFO is a plist holding contextual information."
+  (format "<pre class=\"example\">\n%s</pre>"
+          (string-trim
+           (org-html-do-format-code
+           (org-remove-indentation
+            (org-element-property :value fixed-width))))))
+(setq org-directory (expand-file-name "~/Templates/org"))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
