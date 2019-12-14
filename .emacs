@@ -6,8 +6,12 @@
 (package-initialize)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(setq x-select-enable-clipboard t)
+;; packages
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  )(setq x-select-enable-clipboard t)
 (savehist-mode 1)
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
@@ -55,7 +59,6 @@
 (setq org-html-table-default-attributes
       '(:border "0" :cellspacing "0" :cellpadding "3" :rules "none" :frame "none"))
 (require 'subr-x)
-
 (defun org-html-fixed-width (fixed-width _contents _info)
   "Transcode a FIXED-WIDTH element from Org to HTML.
 CONTENTS is nil.  INFO is a plist holding contextual information."
@@ -65,6 +68,34 @@ CONTENTS is nil.  INFO is a plist holding contextual information."
            (org-remove-indentation
             (org-element-property :value fixed-width))))))
 (setq org-directory (expand-file-name "~/Templates/org"))
+(setq org-html-validation-link nil)
+(require 'org-id)
+(setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id)
+(defun eos/org-custom-id-get (&optional pom create prefix)
+  "Get the CUSTOM_ID property of the entry at point-or-marker POM.
+   If POM is nil, refer to the entry at point. If the entry does
+   not have an CUSTOM_ID, the function returns nil. However, when
+   CREATE is non nil, create a CUSTOM_ID if none is present
+   already. PREFIX will be passed through to `org-id-new'. In any
+   case, the CUSTOM_ID of the entry is returned."
+  (interactive)
+  (org-with-point-at pom
+    (let ((id (org-entry-get nil "CUSTOM_ID")))
+      (cond
+       ((and id (stringp id) (string-match "\\S-" id))
+        id)
+       (create
+        (setq id (org-id-new (concat prefix "h")))
+        (org-entry-put pom "CUSTOM_ID" id)
+        (org-id-add-location id (buffer-file-name (buffer-base-buffer)))
+        id)))))
+(defun eos/org-add-ids-to-headlines-in-file ()
+  "Add CUSTOM_ID properties to all headlines in the
+   current file which do not already have one."
+  (interactive)
+  (org-map-entries (lambda () (eos/org-custom-id-get (point) 'create))))
+(with-eval-after-load 'ox
+  (require 'ox-hugo))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -82,7 +113,7 @@ CONTENTS is nil.  INFO is a plist holding contextual information."
  '(org-export-backends (quote (ascii html icalendar latex md odt)))
  '(package-selected-packages
    (quote
-    (tramp-term pdf-tools ox-pandoc ## magit pandoc-mode dictionary fontawesome helm))))
+    (ox-hugo impatient-mode simple-httpd tramp-term pdf-tools ox-pandoc ## magit pandoc-mode dictionary fontawesome helm))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -96,3 +127,9 @@ CONTENTS is nil.  INFO is a plist holding contextual information."
    (server-start))
   (add-hook 'find-file-hook 'delete-other-windows)
   (require 'tramp-term)
+  (require 'impatient-mode)
+  (require 'htmlize)
+  (require 'simple-httpd)
+(require 'gnus)
+(setq nnml-directory "~/Mail")
+(setq message-directory "~/Mail")
