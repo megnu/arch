@@ -26,10 +26,10 @@ feh --bg-scale ~/.config/bspwm/wall.png &
 xsetroot -cursor_name left_ptr &
 sxhkd &
 xcalib $HOME/.config/bspwm/affs.icc &
-conky &
+#conky &
 run nm-applet &
 run gxkb &
-termite -e "emacs" &
+run termite -e "emacs" &
 run xfce4-power-manager &
 numlockx on &
 picom --config $HOME/.config/bspwm/picom.conf &

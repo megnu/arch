@@ -56,11 +56,11 @@ alias merge="xrdb -merge ~/.Xresources"
 
 # Aliases for software managment
 # pacman or pm
-alias pacman='sudo pacman --color auto'
+alias pacman='sudo pacman'
 alias update='sudo pacman -Syyu'
 
 # yay as aur helper - updates everything
-alias pksyua="yay -Syu --noconfirm"
+#alias pksyua="yay -Syu --noconfirm"
 
 #ps
 alias ps="ps auxf"

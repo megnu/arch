@@ -113,7 +113,8 @@ CONTENTS is nil.  INFO is a plist holding contextual information."
  '(org-export-backends (quote (ascii html icalendar latex md odt)))
  '(package-selected-packages
    (quote
-    (ox-hugo impatient-mode simple-httpd tramp-term pdf-tools ox-pandoc ## magit pandoc-mode dictionary fontawesome helm))))
+    (gnus-mock ox-hugo impatient-mode simple-httpd tramp-term pdf-tools ox-pandoc ## magit pandoc-mode dictionary fontawesome helm)))
+ '(send-mail-function (quote smtpmail-send-it)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -130,6 +131,4 @@ CONTENTS is nil.  INFO is a plist holding contextual information."
   (require 'impatient-mode)
   (require 'htmlize)
   (require 'simple-httpd)
-(require 'gnus)
-(setq nnml-directory "~/Mail")
-(setq message-directory "~/Mail")
+(setq shr-color-visible-luminance-min 70)

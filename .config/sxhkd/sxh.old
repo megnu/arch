@@ -1,0 +1,341 @@
+;########################
+# SUPER + FUNCTION KEYS #
+#########################
+
+#Network
+super + F1
+    nm-connection-editor
+
+#Text
+super + F2
+    xfce4-terminal -e 'emacs' 
+
+#Gimp
+super + F3
+    gimp
+
+#Gnumeric
+super + F4
+    gnumeric
+
+#LoWriter
+super + F5
+    lowriter
+
+#VirtualManager
+super + F6
+    virt-manager
+
+#Lxappearance
+super + F7
+    lxappearance
+
+#Inkscape
+super + F8
+    oomox-gui
+
+#Thunderbird
+super + F9
+    thunderbird
+
+#Pass
+super + F10
+    keepassxc
+
+#Character Map
+super + F11
+    gucharmap
+
+#Update
+super + F12
+    pamac-manager
+
+
+#########################
+# SUPER + ... KEYS      #
+#########################
+
+#Toggle fullscreen of window
+super + f
+	bspc node --state \~fullscreen
+
+#music player
+super + m
+    clementine
+
+#Catfish
+super + s
+    catfish
+
+# Toggle pseudo tiling of window
+super + p
+	bspc node --state \~pseudo_tiled
+
+#Terminal
+super + t
+    urxvt
+
+#Galculator
+super + c
+    galculator
+
+#Leafpad
+super + n
+    leafpad
+
+#Pavucontrol
+super + v
+    mullvad-vpn
+
+#Gcolor3
+super + g
+    gcolor3
+
+#Xfce4-appfinder
+super + a
+    xfce4-appfinder
+
+#Hexchat
+super + b
+    hexchat
+
+#Firefox
+super + e
+    firefox --private-window 
+
+#Meld
+super + y
+    dmenu_run -i -nb '#191919' -nf '#89D273' -sb '#89D273' -sf '#191919' -fn 'IBMPlexMono:pixelsize=14'
+
+#Browser
+super + w
+    chromium -no-default-browser-check
+
+#DMENU
+super + q
+    firefox
+
+#Xterm
+super + x
+    oblogout
+
+#Documents
+super +  d
+   evince
+    
+#Rsync
+super + r
+    grsync
+
+#Xkill
+super + Escape
+    xkill
+
+#Terminal emulator
+super + Return
+	urxvt
+
+#Keyboard dependent
+#Terminal emulator
+#super + KP_Enter
+#	urxvt
+
+#########################
+# SUPER + SHIFT KEYS    #
+#########################
+
+#File-Manager
+super + shift + Return
+	pcmanfm-qt
+
+#Keyboard dependent
+#File-Manager
+#super + shift + KP_Enter
+#   nemo
+   
+#Reload bspwm
+super + shift + r
+	~/.config/bspwm/bspwmrc
+
+#reload sxhkd:
+super + shift + s
+	pkill -USR1 -x sxhkd
+
+#kill
+super + shift + q
+	bspc node -c
+#kill mullvad
+super + shift + v
+      pkill mullvad
+
+#Logout
+super + shift + x
+	bspc quit
+
+#Screen-Locker
+super + shift + z
+     slimlock
+
+#XFCE-Term 
+super + shift + t
+    xfce4-terminal
+
+
+#########################
+# CONTROL + SHIFT KEYS  #
+#########################
+
+#Xcfe4-TaskManager
+ctrl + shift + Escape
+    xfce4-taskmanager
+
+#########################
+#     SCREENSHOTS       #
+#########################
+
+#Scrot
+Print
+    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+
+#screeenshooter
+ctrl + Print
+     xfce4-screenshooter
+
+#########################
+#     MULTIMEDIA KEYS   #
+#########################
+
+#Raises volume
+XF86AudioRaiseVolume
+    amixer set Master 10%+
+
+#Lowers volume
+XF86AudioLowerVolume
+    amixer set Master 10%-
+
+#Mute
+XF86AudioMute
+    amixer -D pulse set Master 1+ toggle
+
+#Playerctl works for Pragha, Spotify and others
+#DELETE the line for mpc if you want to use playerctl
+#putting a hashtag in front of the mpc line will NOT work
+#mpc works for ncmpcpp
+
+#PLAY
+XF86AudioPlay
+    mpc toggle
+    #playerctl play-pause
+
+#Next
+XF86AudioNext
+     mpc next
+     #playerctl next
+
+#previous
+XF86AudioPrev
+    mpc prev
+    #playerctl previous
+
+#Stop
+XF86AudioStop
+    mpc stop
+    #playerctl stop
+
+#Brightness up
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+#Brightness down
+XF86MonBrightnessDown
+    xbacklight -dec 10
+
+#########################
+# BSPWM LAYOUT KEYS     #
+#########################
+
+#azerty keyboard layout for numbers 1-10
+#{ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
+
+#################################################################
+
+#Focus selected desktop FOR QWERTY KEYBOARDS
+super + {1-9,0}
+	bspc desktop -f '^{1-9,10}'
+
+#Focus selected desktop	FOR AZERTY KEYBOARDS
+#super + {ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
+#    bspc desktop -f '^{1-9,10}'
+
+#################################################################
+
+#Move window to selected desktop FOR QWERTY KEYBOARDS
+super + shift + {1-9,0}
+    id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
+
+#Move window to selected desktop FOR AZERTY KEYBOARDS
+#super + shift + {ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
+#    id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
+
+#################################################################
+
+
+#Focus previous selected desktop
+super + shift + Tab
+	bspc desktop -f prev
+
+#Focus next selected desktop
+super + Tab
+	bspc desktop -f next
+
+#Rotate desktop
+super + z
+	bspc node @/ --rotate {90,-90}
+
+# Focus/swap windows by direction
+super + {_,shift + }{h,j,k,l}
+	bspc node --{focus,swap} {west,south,north,east}
+
+# Focus/swap windows by direction
+ctrl + super + {Left,Down,Up,Right}
+	bspc node --{focus} {west,south,north,east}
+
+# Flip layout vertically/horizontally
+super + {_,shift + }a
+	bspc node @/ --flip {vertical,horizontal}
+
+# Expand tiled space
+ctrl + super + {h,j,k,l}
+	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+
+# Contract tiled space
+ctrl + shift + {h,j,k,l}
+	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
+
+# Increase/decrease window gap on focused desktop
+super + bracket{left,right}
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 5 ))
+
+# Move floalting window
+ctrl + space {_,shift + }{Left,Down,Up,Right}
+	~/.config/bspwm/scripts/move-window {_,edge-}{west,south,north,east}
+
+# set the window state
+super + space
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Focus parent/brother/first/second for preselection
+super + ctrl + {e,r,t,y}
+	bspc node --focus @{parent,brother,first,second}
+
+# Preselect the splitting area for next window on leaf/parent
+super + ctrl + {u,i,o,p}
+	bspc node --presel-dir \~{west,south,north,east}
+
+# Define splitting ratio for next window on leaf/parent
+super + ctrl + {_,shift +}{1-9}
+	bspc node {_,@/} --presel-ratio 0.{1-9}
+
+# Cancel preselection
+super + ctrl + space
+	bspc node --presel-dir cancel

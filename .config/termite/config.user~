@@ -1,0 +1,61 @@
+## Termite Styling Program
+## Author : Aditya Shakya
+
+[options]
+
+allow_bold = true
+audible_bell = true
+browser = xdg-open
+clickable_url = true
+cursor_blink = system
+cursor_shape = block
+dynamic_title = true
+filter_unmatched_urls = true
+font = Iosevka Nerd Font 10
+geometry = 480x280
+icon_name = terminal
+modify_other_keys = false
+mouse_autohide = false
+scroll_on_output = false
+scroll_on_keystroke = true
+scrollback_lines = 15000
+size_hints = false
+search_wrap = true
+urgent_on_bell = true
+highlight = #30e60b
+
+[colors]
+
+
+# Base16 Isotope
+# Scheme: Jan T. Sott
+
+foreground=   #FFFFFF
+background=   #000000
+cursor=  #30e60b
+
+color0=       #000000
+color1=       #e60b1b
+color2=       #30e60b
+color3=       #c10ae6
+color4=       #0ae6e6
+color5=       #660be6
+color6=       #0be68b
+color7=       #d0d0d0
+
+color8=       #808080
+color9=       #e63b0b
+color10=      #ffff00
+color11=      #e60b80
+color12=      #0b53e6
+color13=      #cc00ff
+color14=      #00ffff
+color15=      #ffffff
+
+color16=      #ff9900
+color17=      #3300ff
+color18=      #0ae6E6
+color19=      #606060
+color20=      #c0c0c0
+color21=      #e0e0e0
+
