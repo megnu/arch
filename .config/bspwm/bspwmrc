@@ -9,7 +9,7 @@ $HOME/.config/bspwm/autostart.sh
 bspc config border_width         1
 bspc config window_gap           0
 bspc config top_padding          0
-bspc config bottom_padding       29
+bspc config bottom_padding       25
 bspc config left_padding         0
 bspc config right_padding        0
 bspc config single_monocle       false
@@ -28,6 +28,7 @@ bspc config remove_disabled_monitors true
 bspc config merge_overlapping_monitors true
 bspc config automatic_scheme longest_side
 bspc config initial_polarity second_child
+bspc config directional_focus_tightness low
 
 #BSPWM coloring
 bspc config normal_border_color		"#000000"
@@ -66,6 +67,7 @@ bspc rule -a Pavucontrol state=floating
 bspc rule -a Xfce4-terminal state=floating
 #Tiled applications
 bspc rule -a Surf state=tiled
+bspc rule -a URxvt:htop state=floating
 
 #open applications on specific workspaces
 bspc rule -a iceweasel desktop='^1' follow=on
@@ -77,7 +79,7 @@ bspc rule -a qBittorrent desktop='^4' follow=on
 bspc rule -a Soffice desktop='^5' follow=on
 bspc rule -a Virt-manager desktop='^6' follow=on
 bspc rule -a Lxappearance desktop='^7' follow=on
-bspc rule -a Hexchat desktop='^8' follow=on
+bspc rule -a Hexchat desktop='^7' follow=on
 bspc rule -a Arandr desktop='^8' state=floating follow=on
 bspc rule -a Thunderbird desktop='^9' follow=on
 bspc rule -a KeePassXC desktop='^10' follow=on

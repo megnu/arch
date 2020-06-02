@@ -25,6 +25,7 @@ feh --bg-scale ~/.config/bspwm/wall.png &
 
 xsetroot -cursor_name left_ptr &
 sxhkd &
+urxvtd &
 xcalib $HOME/.config/bspwm/affs.icc &
 #conky &
 run nm-applet &
@@ -33,4 +34,4 @@ run termite -e "emacs" &
 run xfce4-power-manager &
 numlockx on &
 picom --config $HOME/.config/bspwm/picom.conf &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &

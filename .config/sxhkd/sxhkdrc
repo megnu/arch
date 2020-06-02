@@ -60,11 +60,7 @@ super + f
 
 #music player
 super + m
-    clementine
-
-#search
-super + s
-    catfish
+    pavucontrol
 
 #toggle floating window
 super + w
@@ -72,7 +68,7 @@ super + w
 
 #popup terminal
 super + t
-    xfce4-terminal
+    urxvtc -name htop
 
 #galculator
 super + c
@@ -94,9 +90,9 @@ super + g
 super + a
     xfce4-appfinder
 
-#volume
+#tor
 super + b
-    pavucontrol
+    tor-browser
 
 #meld
 super + y
@@ -107,16 +103,20 @@ super + d
     dmenu_run -i -nb '#191919' -nf '#89D273' -sb '#89D273' -sf '#191919' -fn 'IBMPlexMono:pixelsize=14'
 
 #surf
+#super + e
+    #surf localhost:8080/imp/
+
+#chromium
 super + e
-    surf localhost:8080/imp/
+    chromium
 
 #logout
 super + x
     oblogout
     
-#rsync
+#chromium-private
 super + r
-    simplescreenrecorder
+    chromium --incognito
 
 #xkill
 super + Escape
@@ -128,7 +128,7 @@ super + q
 
 #terminal
 super + Return
-    urxvt
+    urxvtc
       
 #terminal
 #super + Return
@@ -145,12 +145,12 @@ super + Return
 
 #file manager
 super + shift + Return
-    nemo
+    pcmanfm-qt
 
 #keyboard dependent
 #file manager
 #super + shift + KP_Enter
-#    nemo
+#    pcmanfm-qt
    
 #reload bspwm
 super + shift + r
@@ -160,13 +160,13 @@ super + shift + r
 super + shift + s
     pkill -USR1 -x sxhkd
 
-#iceweasel
+#web browser
 super + shift + w
-    iceweasel
+    firefox
 
 #iceweasel private
 super + shift + p
-    iceweasel --private-window
+    firefox --private-window
 
 #kill mullvad
 super + shift + v
@@ -315,12 +315,16 @@ ctrl + super + {h,j,k,l}
 super + bracket{left,right}
     bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 5 ))
 
-#move floalting window
-ctrl + space {_,shift + }{Left,Down,Up,Right}
+#move floating window
+super + {_,shift + }{Left,Down,Up,Right}
     ~/.config/bspwm/scripts/move-window {_,edge-}{west,south,north,east}
 
+#resize floating window
+super + grave
+    bspc pointer -t %i %i
+
 #set the window state
-super + space
+super + ctrl + space
     bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 #focus parent/brother/first/second for preselection
@@ -328,13 +332,26 @@ super + ctrl + {e,r,t,y}
     bspc node --focus @{parent,brother,first,second}
 
 #preselect the splitting area for next window on leaf/parent
+super + {u,i,o,p}
+    bspc node --presel-dir \~{west,south,north,east}
 super + ctrl + {u,i,o,p}
     bspc node --presel-dir \~{west,south,north,east}
+
 
 #define splitting ratio for next window on leaf/parent
 super + ctrl + {_,shift +}{1-9}
     bspc node {_,@/} --presel-ratio 0.{1-9}
 
 #cancel preselection
-super + ctrl + space
+super + space
     bspc node --presel-dir cancel
+
+# Switch focus between the windows of the current desktop
+super + s
+    bspc node -f {next,prev}.local
+
+super + equal
+    bspc node 'next.local.floating' -f
+
+super + minus
+    bspc node 'next.local.tiled' -f
