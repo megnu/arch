@@ -106,7 +106,7 @@ URxvt*color7:    #D2E6E2
 URxvt*color15:   #FFFFFF
 ! fonts
 URxvt*letterSpace:      -1
-URxvt*font:             xft:IBMPlexMono:regular:size=10
+URxvt*font:             xft:IBMPlexMono:regular:size=10,Noto Color Emoji:size=8
 URxvt*imFont:           xft:IBMPlexMono:regular:size=10
 URxvt*boldFont:         xft:IBMPlexMono:bold:size=10
 URxvt*italicFont:       xft:IBMPlexMono:italic:size=10
