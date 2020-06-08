@@ -22,17 +22,17 @@ super + F4
 super + F5
     lowriter
 
-#virtualmanager
+#electrum
 super + F6
-    virt-manager
+    electrum
 
 #lxappearance
 super + F7
     lxappearance
 
-#arandr
+#xev
 super + F8
-    arandr
+    urxvtc -e xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 
 #mail
 super + F9
@@ -42,7 +42,7 @@ super + F9
 super + F10
     keepassxc
 
-#update
+#font manager
 super + F11
     font-manager
 
@@ -63,9 +63,8 @@ super + m
     pavucontrol
 
 #toggle floating window
-super + w
-    bspc node @/ --rotate {90,-90}
-
+#super + w
+        
 #popup terminal
 super + t
     urxvtc -name htop
@@ -86,9 +85,9 @@ super + v
 super + g
     gcolor3
 
-#xfce4-appfinder
-super + a
-    xfce4-appfinder
+#rofi
+super + grave
+    rofi -combi-modi window,drun,ssh -theme fancy -font "IBMPlexMono 12" -show combi -icon-theme "lehua" -show-icons
 
 #tor
 super + b
@@ -98,10 +97,10 @@ super + b
 super + y
     meld
 
-#dmenu
-super + d
-    dmenu_run -i -nb '#191919' -nf '#89D273' -sb '#89D273' -sf '#191919' -fn 'IBMPlexMono:pixelsize=14'
-
+#flip layout
+super + z
+    bspc node @/ --rotate {90,-90}
+    
 #surf
 #super + e
     #surf localhost:8080/imp/
@@ -122,6 +121,10 @@ super + r
 super + Escape
     xkill
 
+#alternate between the tiled and monocle layout
+super + d
+	bspc desktop -l next
+    
 #kill window
 super + q
     bspc node -c
@@ -160,6 +163,9 @@ super + shift + r
 super + shift + s
     pkill -USR1 -x sxhkd
 
+#underfilemanager
+super + shift + i
+    bspc node --presel-dir \~{south} && pcmanfm-qt
 #web browser
 super + shift + w
     firefox
@@ -180,9 +186,9 @@ super + shift + x
 super + shift + z
     slimlock
 
-#xfce4 term 
+#south term 
 super + shift + t
-    termite
+    bspc node --presel-dir \~{south} && urxvtc
 
 #########################
 #     SCREENSHOTS       #
@@ -190,7 +196,7 @@ super + shift + t
 
 #scrot
 Print
-    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+    scrot 'img%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
 
 #screeenshooter
 ctrl + Print
@@ -278,7 +284,6 @@ super + shift + {1-9,0}
 
 #################################################################
 
-
 #focus previous selected desktop
 super + shift + Tab
     bspc desktop -f prev
@@ -287,8 +292,8 @@ super + shift + Tab
 super + Tab
     bspc desktop -f next
 
-#rotate desktop
-super + z
+#floating window
+super + a
     bspc node --state \~floating
 
 #focus/swap windows by direction
@@ -320,11 +325,11 @@ super + {_,shift + }{Left,Down,Up,Right}
     ~/.config/bspwm/scripts/move-window {_,edge-}{west,south,north,east}
 
 #resize floating window
-super + grave
-    bspc pointer -t %i %i
+#super + grave
+    #bspc pointer -t %i %i
 
 #set the window state
-super + ctrl + space
+super + w
     bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 #focus parent/brother/first/second for preselection
@@ -337,13 +342,15 @@ super + {u,i,o,p}
 super + ctrl + {u,i,o,p}
     bspc node --presel-dir \~{west,south,north,east}
 
-
 #define splitting ratio for next window on leaf/parent
 super + ctrl + {_,shift +}{1-9}
     bspc node {_,@/} --presel-ratio 0.{1-9}
 
 #cancel preselection
 super + space
+    bspc node --presel-dir cancel
+
+super + ctrl + space
     bspc node --presel-dir cancel
 
 # Switch focus between the windows of the current desktop
@@ -355,3 +362,21 @@ super + equal
 
 super + minus
     bspc node 'next.local.tiled' -f
+
+#########################
+# NEW KEYBINDINGS       #
+#########################
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# go to previous and next node
+super + {semicolon,apostrophe}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on

@@ -24,14 +24,15 @@ feh --bg-scale ~/.config/bspwm/wall.png &
 #feh --randomize --bg-fill ~/Dropbox/Apps/Desktoppr/*
 
 xsetroot -cursor_name left_ptr &
+setxkbmap -option grp:ctrls_toggle us,th &
 sxhkd &
 urxvtd &
 xcalib $HOME/.config/bspwm/affs.icc &
 #conky &
 run nm-applet &
-run gxkb &
+#run gxkb &
 run termite -e "emacs" &
 run xfce4-power-manager &
 numlockx on &
-picom --config $HOME/.config/bspwm/picom.conf &
+#picom --config $HOME/.config/bspwm/picom.conf &
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &

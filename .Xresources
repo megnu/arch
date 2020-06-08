@@ -61,7 +61,8 @@ URxvt*metaSendsEscape:  true
 URxvt*depth:             32
 URxvt*transparent:       false
 URxvt*shading:           0
-URxvt*background:        rgba:0000/0000/0200/c800
+! URxvt*background:        rgba:0000/0000/0000/DE00
+URxvt*background:        #000000
 URxvt*foreground:        #FFFFFF
 URxvt*underlineColor:    #73D2BC
 URxvt*highlightColor:    #73D2BC
@@ -106,11 +107,11 @@ URxvt*color7:    #D2E6E2
 URxvt*color15:   #FFFFFF
 ! fonts
 URxvt*letterSpace:      -1
-URxvt*font:             xft:IBMPlexMono:regular:size=10,Noto Color Emoji:size=8
-URxvt*imFont:           xft:IBMPlexMono:regular:size=10
-URxvt*boldFont:         xft:IBMPlexMono:bold:size=10
-URxvt*italicFont:       xft:IBMPlexMono:italic:size=10
-URxvt*boldItalicFont:   xft:IBMPlexMono:regular:size=10
+URxvt*font:             xft:IBMPlexMono:regular:size=11,Noto Color Emoji:size=9
+URxvt*imFont:           xft:IBMPlexMono:regular:size=11
+URxvt*boldFont:         xft:IBMPlexMono:bold:size=11
+URxvt*italicFont:       xft:IBMPlexMono:italic:size=11
+URxvt*boldItalicFont:   xft:IBMPlexMono:regular:size=11
 ! run :.!fc-list | grep <font-name>
 ! perl extensions
 URxvt*perl-ext-common:  default,clipboard,url-select,keyboard-select,resize-font

@@ -31,7 +31,8 @@ urgent_on_bell = true
 # Scheme: Jannik Siebert (https://github.com/janniks)
 
 foreground=   #FFFFFF
-background = rgba(0, 0, 0, 0.8)
+#background = rgba(0, 0, 0, 0.9)
+background= #000000
 #cursor = #89D273
 # colors
 

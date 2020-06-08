@@ -29,7 +29,7 @@ compositing-underline = over
 compositing-border = over
 
 ; Define fallback values used by all module formats
-format-foreground = #CC000000
+format-foreground = #E6000000
 format-background = #FFFFFF
 format-underline =
 format-overline =
@@ -40,7 +40,9 @@ format-offset =
 
 [colors]
 ; Ohia theme ============
-background = #CC000000
+;transparent-bg = #CC000000
+;background = #DE000000
+background = #000000
 foreground = #FFFFFF
 alert = #D27389
 volume-min = #D27389
@@ -98,8 +100,8 @@ font-2 = "ThaiSansNeue-UltraBold:size=15;0"
 font-3 = "BebasNeue-Regular:size=13;0"
 
 modules-left = bspwm xwindow
-modules-center = 
-modules-right = date cpu2 memory2 battery pavolume
+modules-center =
+modules-right = time date cpu2 memory2 battery pavolume xkeyboard
 
 tray-detached = false
 tray-offset-x = 0
@@ -127,15 +129,15 @@ enable-scroll = true
 reverse-scroll = true
 pin-workspaces = true
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4; 
+ws-icon-4 = 5;
+ws-icon-5 = 6;
 ws-icon-6 = 7;
 ws-icon-7 = 8;
-ws-icon-8 = 9;
+ws-icon-8 = 9;
 ws-icon-9 = 10;
 ws-icon-default = " "
 
@@ -165,9 +167,9 @@ label-tiled = "  "
 label-tiled-foreground = ${colors.foreground}
 label-fullscreen = "  "
 label-fullscreen-foreground = ${colors.foreground}
-label-floating = "  "
+label-floating = "  "
 label-floating-foreground = ${colors.foreground}
-label-pseudotiled = "  "
+label-pseudotiled = "  "
 label-pseudotiled-foreground = ${colors.foreground}
 label-locked = "  "
 label-locked-foreground = ${colors.foreground}
@@ -246,23 +248,24 @@ type = internal/battery
 battery = BAT0
 adapter = AC0
 full-at = 100
-
 format-charging = <animation-charging> <label-charging>
-label-charging = + %percentage%%
-format-charging-foreground = ${colors.foreground}
+label-charging = +%percentage%%
+label-charging-foreground = #A973D2
+format-charging-foreground = #A973D2
 format-charging-background = ${colors.background}
 #format-charging-underline = #30E60B
 
 format-discharging = <ramp-capacity> <label-discharging>
-label-discharging = - %percentage%%
+label-discharging = -%percentage%%
+label-discharging-foreground = #A973D2
 #format-discharging-underline = #30E60B
-format-discharging-foreground = ${colors.foreground}
+format-discharging-foreground = #A973D2
 format-discharging-background = ${colors.background}
 
 format-full-prefix = " "
 format-full-prefix-foreground = #A973D2
 #format-full-underline = #30E60B
-format-foreground = ${colors.foreground}
+format-foreground = #A973D2
 format-background = ${colors.background}
 
 ramp-capacity-0 = 
@@ -355,11 +358,11 @@ type = internal/cpu
 ; Seconds to sleep between updates
 ; Default: 1
 interval = 1
-format-foreground = ${colors.foreground}
+format-foreground = #73D2BC
 format-background = ${colors.background}
-format-prefix = "  "
-format-prefix-foreground = #73D2BC
-#format-underline = #30E60B
+;format-prefix = "  "
+;format-prefix-foreground = #73D2BC
+;format-underline = #30E60B
 
 label-font = 0
 
@@ -380,6 +383,24 @@ label = Cpu %percentage%%
 
 ################################################################################
 
+[module/time]
+;https://github.com/jaagr/polybar/wiki/Module:-date
+type = internal/date
+; Seconds to sleep between updates
+interval = 1
+; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+;date = " %a %d %b "
+time = %H:%M
+
+format-prefix = "∅ "
+format-prefix-foreground = #D2CF73
+;format-underline = #30E60B
+format-foreground = #D2CF73
+format-background = ${colors.background}
+label = %time%
+
+#################################################################
 [module/date]
 ;https://github.com/jaagr/polybar/wiki/Module:-date
 type = internal/date
@@ -387,15 +408,14 @@ type = internal/date
 interval = 1
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = " %a %d %b +"
-time = %H:%M
+date = "%a %b %d "
 
-format-prefix = " "
+format-prefix = "◊ "
 format-prefix-foreground = #73D275
-#format-underline = #30E60B
-format-foreground = ${colors.foreground}
+;format-underline = #30E60B
+format-foreground = #73D275
 format-background = ${colors.background}
-label = %date% %time%
+label = %date%
 
 #################################################################
 
@@ -584,10 +604,10 @@ interval = 1
 label = %percentage_used%%
 
 format = Mem <label>
-format-prefix = "  "
-format-prefix-foreground = #73A1D2
-#format-underline = #30E60B
-format-foreground = ${colors.foreground}
+;format-prefix = "§ "
+;format-prefix-foreground = #73A1D2
+;format-underline = #30E60B
+format-foreground = #73A1D2
 format-background = ${colors.background}
 
 ################################################################################
@@ -610,7 +630,7 @@ label = %gb_used%/%gb_free%
 format = Mem <label>
 format-prefix = "  "
 format-prefix-foreground = #30E60B
-format-underline = #30E60B
+;format-underline = #30E60B
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
@@ -684,8 +704,8 @@ click-right = exec pavucontrol
 click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
 scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
 scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
-#format-underline = #30E60B
-format-foreground = ${colors.foreground}
+;format-underline = #30E60B
+format-foreground = #D27389
 format-background = ${colors.background}
 
 
@@ -699,7 +719,7 @@ exec = ~/.config/polybar/scripts/pub-ip.sh
 interval = 100
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-underline = #FFBB00
+;format-underline = #FFBB00
 label = %output%
 format-prefix = "  "
 format-prefix-foreground = #FFBB00
@@ -715,7 +735,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = "  "
 format-prefix-foreground = #62FF00
-format-underline = #62FF00
+;format-underline = #62FF00
 
 ################################################################################
 
@@ -750,7 +770,7 @@ warn-temperature = 70
 format = <ramp> <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-underline = #c72581
+;format-underline = #c72581
 format-warn = <ramp> <label-warn>
 format-warn-underline = #c7254f
 label = %temperature%
@@ -771,11 +791,11 @@ type = custom/script
 exec = ~/.config/polybar/scripts/tempcores.sh
 interval = 2
 format-padding = 1
-format-foreground = ${colors.foreground}
+format-foreground = #FFFFFF
 format-background = ${colors.background}
-format-underline = #C1B93E
-format-prefix-foreground = #C1B93E
-label =  %output:0:150:%
+;format-underline = #C1B93E
+format-prefix-foreground = #FFFFFF
+label = %output:0:150:%
 
 ################################################################################
 
@@ -790,7 +810,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = " "
 format-prefix-foreground = #C15D3E
-format-underline = #C15D3E
+;format-underline = #C15D3E
 
 ################################################################################
 
@@ -804,7 +824,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = ""
 format-prefix-foreground = #FFFFF
-format-underline = #30E60B
+;format-underline = #30E60B
 click-right = variety --preferences
 click-left = variety --selector
 
@@ -850,7 +870,7 @@ interval = 10
 format = <label>
 format-prefix = " "
 format-prefix-foreground = #30E60B
-format-underline = #30E60B
+;format-underline = #30E60B
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 exec = python -u ~/.config/polybar/scripts/weather.py
@@ -938,7 +958,7 @@ format-prefix = "   "
 format-prefix-foreground = ${colors.foreground}
 format-prefix-background = ${colors.background}
 format-prefix-underline = #9f78e1
-format-underline = #9f78e1
+;format-underline = #9f78e1
 label = %percentage%%
 bar-width = 10
 bar-indicator = 
@@ -960,19 +980,19 @@ format-background = ${colors.background}
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+format-prefix = " "
+format-prefix-foreground = #D19573
 format-prefix-background = ${colors.background}
-format-prefix-underline = #3ecfb2
-format-foreground = ${colors.foreground}
+;format-prefix-underline = #3ecfb2
+format-foreground = #D19573
 format-background = ${colors.background}
 
 label-layout = %layout%
-label-layout-underline = #3ecfb2
+;label-layout-underline = #3ecfb2
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.background}
-label-indicator-underline = ${colors.foreground}
+;label-indicator-underline = ${colors.foreground}
 
 ################################################################################
 
