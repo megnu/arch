@@ -19,7 +19,10 @@ from gimpfu import *
 # Adds a new layer beneath the given layer. Return value is the new layer
 def add_new_layer_beneath(image, layer):
 	# Get the layer position.
-	position = image.layers.index(layer)
+	pos = 0;
+	for i in range(len(image.layers)):
+		if(image.layers[i] == layer):
+			pos = i
 	
 	if image.base_type is RGB:
 		type = RGBA_IMAGE
@@ -27,8 +30,8 @@ def add_new_layer_beneath(image, layer):
 		type = GRAYA_IMAGE
 		
 	# Add a new layer below the selected one
-	new_layer = gimp.Layer(image, "Outline for %s" % (layer.name), image.width, image.height, type, 100, NORMAL_MODE)
-	image.add_layer(new_layer, position+1)	
+	new_layer = gimp.Layer(image, "text outline", image.width, image.height, type, 100, NORMAL_MODE)
+	image.add_layer(new_layer, pos+1)	
 	return new_layer
 
 # Selects the contents of the given layer, then grows it by "thickness"
@@ -59,15 +62,14 @@ def fill_selection(layer, colour):
 	return
 
 # our script
-def add_text_outline(image, layer, colour, thickness, feather) :
+def add_text_outline(image, layer, thickness, feather) :
 	gimp.progress_init("Drawing outline around text")
 	new_layer = add_new_layer_beneath(image, layer)
-	gimp.progress_update(25)
+	gimp.progress_update(33)
 	create_selection(image, layer, thickness, feather)
-	gimp.progress_update(50)
+	gimp.progress_update(66)
+	colour = pdb.gimp_context_get_foreground()
 	fill_selection(new_layer, colour)	
-	gimp.progress_update(75)
-	pdb.plug_in_autocrop_layer(image, new_layer)
 	gimp.progress_update(100)
 	return
 
@@ -78,11 +80,10 @@ register(
 	"Will draw an outline around text (or indeed anything else). The outline is drawn to a separate layer underneath the selected layer.",
 	"Pete Nu", 
 	"Pete Nu", 
-	"2015-2019",
+	"Feb 2015",
 	"<Image>/Filters/Decor/Text Outliner", 
 	"*", 
 	[
-		(PF_COLOUR, 'outline_colour', 'Colour', (0, 0, 0)),
 		(PF_INT, 'outline_thickness', 'Thickness', 6),
 		(PF_INT, 'outline_featheriness', 'Feather', 7)
 	], 

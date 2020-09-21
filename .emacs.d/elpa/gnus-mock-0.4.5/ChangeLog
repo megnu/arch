@@ -1,0 +1,196 @@
+2020-05-05  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	[gnus-mock] Munge maildir article filenames, bump to 0.4.5
+
+	Windows doesn't like filenames with colons in them, rename files 
+	depending on the system.
+
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-start): Look for the string
+	"SEP" in article filenames, and replace with "-" (on 'ms-dos or
+	'windows-nt) or ":" (on everything else).
+
+	Many files renamed.
+
+2019-10-19  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	[gnus-mock] Improvement to previous patch, bump to 0.4.4
+
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-data-dir): 
+	default-directory actually stands a pretty good chance of being the 
+	directory where this file is being loaded from (ie the "data" dir will 
+	be found correctly).
+
+2019-10-18  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	[gnus-mock] Protect value of gnus-mock-data-dir, bump to 0.4.3
+
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-data-dir): This file might
+	be loaded in such a way that load-file-name is nil. Avoid an error in
+	that case, and ask the user to set it themselves.
+
+2019-05-16  Stefan Monnier  <monnier@iro.umontreal.ca>
+
+	* gnus-mock.el: Remove redundant :group args
+
+2019-05-15  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	[gnus-mock] Skeleton code for Gnus Mock interactive tests
+
+	* packages/gnus-mock/data/gnus-mock-tests.el: New library holding
+	 interactive tests.
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-start): Load this library.
+
+2019-05-07  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	[gnus-mock] Add Paul Eggert's misencoded Gnus message, bump to 0.4.2
+
+	*
+	packages/gnus-mock/data/test/mails/cur/1557249518.M173117P12100Q0.slip:2,:
+	 As a regression test for article decoding.
+
+2019-05-07  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	[gnus-mock] Create empty draft/queue directories in advance
+
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-start): Otherwise the
+	 nndraft groups are inactive at startup, and you need to M-g or
+	 restart Gnus to create the directories and make them fully active.
+
+2019-04-09  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	Add nnml server with non-ASCII group name, bump to 0.4.1
+
+	In aftermath of the whole Gnus hashtables mess.
+
+	* packages/gnus-mock/data/.newsrc.eld: Add group.
+	* packages/gnus-mock/data/active:
+	* packages/gnus-mock/data/テスト/.overview:
+	* packages/gnus-mock/data/テスト/1: Data for group.
+	* packages/gnus-mock/gnus-mock.el: Bump version.
+
+2018-12-04  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	[gnus-mock] Set gnus-verbose to max by default, bump to 0.4.0
+
+	* packages/gnus-mock/data/.gnus.el (gnus-verbose): Useful default.
+
+2018-12-04  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	[gnus-mock] Set a value of default-directory for child Emacs process
+
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-start): Small convenience
+	 for getting at Gnus' source files after startup.
+
+2018-12-04  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	[gnus-mock] Don't completely swallow errors
+
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-start): And use
+	 `condition-case-unless-debug'.
+
+2018-11-16  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	[gnus-mock] Add Cyrillic group to the nnimap server, bump to 0.3.0
+
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-start): For testing
+	 non-ASCII group names.
+
+2018-11-05  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	[gnus-mock] Fix two small bugs, bump version to 0.2.1
+
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-start): First,
+	 mock-tmp-dir is referred to within the condition-case error cases,
+	 so needs to be let outside of that. Second, gnus-init-file was being
+	 defined without the trailing ".el", which Gnus can handle, but
+	 wasn't matching the destination of `gnus-mock-gnus-file'. Unify on
+	 "gnus.el".
+
+2018-11-01  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	[gnus-mock] Conditionally add nnimap server, bump to 0.2.0
+
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-dovecot-imap-program):
+	 New option, set to the path of the dovecot imap program to get an
+	 nnimap server. Bump version.
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-start): Check for useable
+	 value of above option and add nnimap server and groups.
+	* packages/gnus-mock/data/imapmail: New directory holding all the mail
+	 data for the nnimap server.
+
+2018-10-23  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	[gnus-mock] Instead of inserting strings, use princ and prin1
+
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-start): For Science.
+
+2018-10-23  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	[gnus-mock] Zoop the condition-case up around the whole function
+
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-start): It's
+	 cleaner (especially when testing) to have the whole main function
+	 wrapped in the condition-case.
+
+2018-10-17  Stefan Monnier  <monnier@iro.umontreal.ca>
+
+	* gnus-mock.el: Make sure the 'data' subdir is included
+
+2018-10-12  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	gnus-mock/data/.gnus.el: Fix comment
+
+	* packages/gnus-mock/data/.gnus.el: Customization option name has
+	 changed, note the new name.
+
+2018-10-12  Stefan Monnier  <monnier@iro.umontreal.ca>
+
+	packages/gnus-mock: Adjust copyright
+
+2018-10-12  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	Provide support for fakesendmail script in windows, bump to 0.1.1
+
+	* packages/gnus-mock/data/windows-sendmail-wrapper.cmd: Executable
+	 wrapper for the fakesendmail.py Python script.
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-sendmail-program): Detect
+	 if we're using Windows, and set accordingly.
+
+2018-10-11  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	Maybe clean up dirs if the start process fails
+
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-start): Check value of
+	 gnus-mock-cleanup-p.
+
+2018-10-11  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	Warn user if sendmail-program is unavailable
+
+	* packages/gnus-mock/data/.gnus.el (gnus-started-hook): Eventually
+	 come up with a more robust solution for sending messages.
+
+2018-10-11  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	Create necessary empty maildir on startup
+
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-start): Git won't commit
+	 empty directories to the repository.
+
+2018-10-10  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	Split gnus-mock-settings-file into two separate options
+
+	* packages/gnus-mock/gnus-mock.el (gnus-mock-gnus-file,
+	 gnus-mock-init-file): Remove `gnus-mock-settings-file', replace with
+	 these two options. The former gets appended to the Gnus startup
+	 file, the latter gets appended to the Emacs init file.
+
+2018-10-10  Eric Abrahamsen  <eric@ericabrahamsen.net>
+
+	Gnus mock initial commit
+
+	* packages/gnus-mock/gnus-mock.el: Basic package, including
+	 `gnus-mock-start' command.
+	* packages/gnus-mock/data/: Data directory.
+

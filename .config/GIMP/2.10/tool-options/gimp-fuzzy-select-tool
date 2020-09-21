@@ -1,0 +1,7 @@
+# GIMP gimp-fuzzy-select-tool options
+
+(operation subtract)
+(select-transparent no)
+(threshold 37.5)
+
+# end of gimp-fuzzy-select-tool options

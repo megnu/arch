@@ -1,0 +1,34 @@
+# settings
+
+(GimpGegl-gegl-softglow-config "2020-08-15 00:03:57"
+    (time 1597424637)
+    (glow-radius 10)
+    (brightness 0.29999999999999999)
+    (sharpness 0.84999999999999998))
+(GimpGegl-gegl-softglow-config "2019-12-16 02:19:21"
+    (time 1576437561)
+    (glow-radius 10)
+    (brightness 0.107)
+    (sharpness 0.84999999999999998))
+(GimpGegl-gegl-softglow-config "2019-05-02 07:09:14"
+    (time 1556755754)
+    (glow-radius 10)
+    (brightness 0.113)
+    (sharpness 0.84999999999999998))
+(GimpGegl-gegl-softglow-config "2019-04-04 14:31:04"
+    (time 1554363064)
+    (glow-radius 10)
+    (brightness 0.091999999999999998)
+    (sharpness 0))
+(GimpGegl-gegl-softglow-config "2019-03-28 04:59:54"
+    (time 1553723994)
+    (glow-radius 9.9710000000000001)
+    (brightness 0.22800000000000001)
+    (sharpness 0.49399999999999999))
+(GimpGegl-gegl-softglow-config "2019-03-24 22:32:13"
+    (time 1553441533)
+    (glow-radius 1)
+    (brightness 0)
+    (sharpness 1))
+
+# end of settings

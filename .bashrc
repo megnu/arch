@@ -23,8 +23,8 @@ fi
 #list
 alias ls='ls --color=auto'
 alias la='ls -a'
-alias ll='ls -la'
-alias l='ls' 					
+alias ll='ls -lah'
+alias l='ls --color=auto' 					
 alias l.="ls -A | egrep '^\.'"      
 
 #fix obvious typo's
@@ -57,7 +57,8 @@ alias merge="xrdb -merge ~/.Xresources"
 # Aliases for software managment
 # pacman or pm
 alias pacman='sudo pacman'
-alias update='sudo pacman -Syyu'
+#alias update='sudo pacman -Syyu'
+alias update='sudo pacman -Syu'
 
 # yay as aur helper - updates everything
 #alias pksyua="yay -Syu --noconfirm"
@@ -84,14 +85,14 @@ alias fc='sudo fc-cache -fv'
 #alias cb="cp ~/.bashrc-latest ~/.bashrc && source ~/.bashrc"
 
 #quickly kill conkies
-alias kc='killall conky'
+#alias kc='killall conky'
 
 #hardware info --short
-alias hw="hwinfo --short"
+#alias hw="hwinfo --short"
 
 #skip integrity check
-alias yayskip='yay -S --mflags --skipinteg'
-alias trizenskip='trizen -S --skipinteg'
+#alias yayskip='yay -S --mflags --skipinteg'
+#alias trizenskip='trizen -S --skipinteg'
 
 #check vulnerabilities microcode
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
@@ -103,27 +104,27 @@ alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/p
 alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
 #mounting the folder Public for exchange between host and guest on virtualbox
-alias vbm="sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Public /home/$USER/Public"
+#alias vbm="sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Public /home/$USER/Public"
 
 #shopt
-shopt -s autocd # change to named directory
-shopt -s cdspell # autocorrects cd misspellings
-shopt -s cmdhist # save multi-line commands in history as single line
-shopt -s dotglob
-shopt -s histappend # do not overwrite history
-shopt -s expand_aliases # expand aliases
+#shopt -s autocd # change to named directory
+#shopt -s cdspell # autocorrects cd misspellings
+#shopt -s cmdhist # save multi-line commands in history as single line
+#shopt -s dotglob
+#shopt -s histappend # do not overwrite history
+#shopt -s expand_aliases # expand aliases
 
 #youtube-dl
-alias yta-aac="youtube-dl --extract-audio --audio-format aac "
-alias yta-best="youtube-dl --extract-audio --audio-format best "
-alias yta-flac="youtube-dl --extract-audio --audio-format flac "
-alias yta-m4a="youtube-dl --extract-audio --audio-format m4a "
-alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
-alias yta-opus="youtube-dl --extract-audio --audio-format opus "
-alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
-alias yta-wav="youtube-dl --extract-audio --audio-format wav "
+#alias yta-aac="youtube-dl --extract-audio --audio-format aac "
+#alias yta-best="youtube-dl --extract-audio --audio-format best "
+#alias yta-flac="youtube-dl --extract-audio --audio-format flac "
+#alias yta-m4a="youtube-dl --extract-audio --audio-format m4a "
+#alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
+#alias yta-opus="youtube-dl --extract-audio --audio-format opus "
+#alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
+#alias yta-wav="youtube-dl --extract-audio --audio-format wav "
 
-alias ytv-best="youtube-dl -f bestvideo+bestaudio "
+#alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
 #Recent Installed Packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -100"

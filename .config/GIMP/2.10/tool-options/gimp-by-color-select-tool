@@ -1,0 +1,6 @@
+# GIMP gimp-by-color-select-tool options
+
+(operation subtract)
+(threshold 50.799999999999997)
+
+# end of gimp-by-color-select-tool options

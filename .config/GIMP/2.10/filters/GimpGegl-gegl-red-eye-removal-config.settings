@@ -1,0 +1,10 @@
+# settings
+
+(GimpGegl-gegl-red-eye-removal-config "2020-03-27 15:36:12"
+    (time 1585298172)
+    (threshold 0.40000000000000002))
+(GimpGegl-gegl-red-eye-removal-config "2019-04-27 14:24:19"
+    (time 1556349859)
+    (threshold 0.80000000000000004))
+
+# end of settings

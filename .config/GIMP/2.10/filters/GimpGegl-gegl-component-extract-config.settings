@@ -1,0 +1,9 @@
+# settings
+
+(GimpGegl-gegl-component-extract-config "2019-04-26 21:54:54"
+    (time 1556351694)
+    (component lch-c)
+    (invert yes)
+    (linear no))
+
+# end of settings

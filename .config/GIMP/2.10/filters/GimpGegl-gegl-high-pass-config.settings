@@ -1,0 +1,16 @@
+# settings
+
+(GimpGegl-gegl-high-pass-config "2019-12-29 20:17:02"
+    (time 1577668622)
+    (std-dev 4)
+    (contrast 1))
+(GimpGegl-gegl-high-pass-config "2019-12-15 14:23:19"
+    (time 1576437799)
+    (std-dev 21.5)
+    (contrast 1.5920000000000001))
+(GimpGegl-gegl-high-pass-config "2019-03-31 04:34:45"
+    (time 1554021285)
+    (std-dev 6740.8999999999996)
+    (contrast 2.0630000000000002))
+
+# end of settings

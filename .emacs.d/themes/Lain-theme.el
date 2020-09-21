@@ -34,8 +34,8 @@
        (fg2 "#ffffff")
        (fg3 "#E9FFFB")
        (fg4 "#D2E6E2")
-       (bg1 "##")
-       (bg2 "##")
+       (bg1 "#000")
+       (bg2 "#000")
        (bg3 "#282828")
        (bg4 "#393939")
        (key2 "#73D283")
@@ -48,7 +48,7 @@
        (str     "#73D283")
        (type    "#D2E6E2")
        (var     "#73d2bc")
-       (warning "#430C12"))
+       (warning "#D19573"))
    (custom-theme-set-faces
    'Lain
         `(default ((,class (:background ,bg1 :foreground ,fg1))))
@@ -68,7 +68,7 @@
         `(highlight ((,class (:foreground ,fg3 :background ,bg3))))
 	`(hl-line ((,class (:background  ,bg2))))
 	`(fringe ((,class (:background ,bg2 :foreground ,fg4))))
-	`(cursor ((,class (:background ,warning))))
+	`(cursor ((,class (:background ,str))))
         `(show-paren-match-face ((,class (:background ,warning))))
         `(isearch ((,class (:bold t :foreground ,warning :background ,bg3))))
         `(mode-line ((,class (:box (:line-width 1 :color nil) :bold t :foreground ,fg4 :background ,bg2))))

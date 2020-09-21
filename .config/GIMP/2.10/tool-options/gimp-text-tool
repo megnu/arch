@@ -1,0 +1,10 @@
+# GIMP gimp-text-tool options
+
+(foreground (color-rgb 1 1 1))
+(palette "Plasma")
+(font "FoglihtenFr02 Medium")
+(font-size 300)
+(hint-style none)
+(justify center)
+
+# end of gimp-text-tool options

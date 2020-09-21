@@ -1,0 +1,9 @@
+# GIMP gimp-rotate-tool options
+
+(background (color-rgb 0.59999999999999998 0.59999999999999998 0.59999999999999998))
+(interpolation linear)
+(frompivot-scale yes)
+(frompivot-shear yes)
+(frompivot-perspective yes)
+
+# end of gimp-rotate-tool options

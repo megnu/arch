@@ -1,0 +1,26 @@
+# settings
+
+(GimpGegl-gimp-posterize-config "2020-07-26 13:41:37"
+    (time 1595770897)
+    (gimp-mode exclusion)
+    (levels 7))
+(GimpGegl-gimp-posterize-config "2020-07-26 13:39:37"
+    (time 1595770777)
+    (levels 3))
+(GimpGegl-gimp-posterize-config "2019-08-13 19:24:32"
+    (time 1565724272)
+    (levels 2))
+(GimpGegl-gimp-posterize-config "2019-08-13 19:08:13"
+    (time 1565723293)
+    (levels 16))
+(GimpGegl-gimp-posterize-config "2019-07-28 17:59:09"
+    (time 1564336749)
+    (levels 5))
+(GimpGegl-gimp-posterize-config "2019-07-28 17:58:46"
+    (time 1564336726)
+    (levels 7))
+(GimpGegl-gimp-posterize-config "2019-07-14 19:07:26"
+    (time 1563131246)
+    (levels 31))
+
+# end of settings

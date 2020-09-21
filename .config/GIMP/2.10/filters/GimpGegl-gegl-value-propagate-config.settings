@@ -1,0 +1,43 @@
+# settings
+
+(GimpGegl-gegl-value-propagate-config "2019-11-20 04:40:23"
+    (time 1574199623)
+    (mode white)
+    (lower-threshold 0)
+    (upper-threshold 1)
+    (rate 1)
+    (color (color-rgba 0.45098039215686275 0.82352941176470584 0.5490196078431373 1))
+    (top yes)
+    (left yes)
+    (right yes)
+    (bottom yes)
+    (value yes)
+    (alpha yes))
+(GimpGegl-gegl-value-propagate-config "2019-04-22 13:52:19"
+    (time 1555915939)
+    (mode white)
+    (lower-threshold 0)
+    (upper-threshold 1)
+    (rate 1)
+    (color (color-rgba 1 0.98412699999999997 0 1))
+    (top yes)
+    (left yes)
+    (right yes)
+    (bottom yes)
+    (value yes)
+    (alpha yes))
+(GimpGegl-gegl-value-propagate-config "2019-04-04 14:34:55"
+    (time 1554363295)
+    (mode white)
+    (lower-threshold 0)
+    (upper-threshold 1)
+    (rate 1)
+    (color (color-rgba 0.90980399999999995 0.94509799999999999 0.83137300000000003 1))
+    (top yes)
+    (left yes)
+    (right yes)
+    (bottom yes)
+    (value yes)
+    (alpha yes))
+
+# end of settings

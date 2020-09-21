@@ -1,0 +1,7 @@
+# GIMP gimp-crop-tool options
+
+(guide thirds)
+(overridden-fixed-aspect yes)
+(fill-type white)
+
+# end of gimp-crop-tool options

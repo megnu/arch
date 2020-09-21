@@ -1,0 +1,16 @@
+# GIMP user context
+
+(tool "gimp-move-tool")
+(paint-info "gimp-paintbrush")
+(foreground (color-rgb 1 1 1))
+(background (color-rgb 0.59999999999999998 0.59999999999999998 0.59999999999999998))
+(brush "1. Pixel")
+(dynamics "Dynamics Off")
+(mybrush "texture 03")
+(pattern "Paper")
+(gradient "FG to Transparent")
+(palette "Plasma")
+(font "FoglihtenFr02 Medium")
+(tool-preset "Core Pointer")
+
+# end of user context

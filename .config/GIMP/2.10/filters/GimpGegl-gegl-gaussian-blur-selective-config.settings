@@ -1,0 +1,8 @@
+# settings
+
+(GimpGegl-gegl-gaussian-blur-selective-config "2019-12-28 22:39:10"
+    (time 1577590750)
+    (blur-radius 5)
+    (max-delta 0.20000000000000001))
+
+# end of settings

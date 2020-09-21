@@ -1,0 +1,32 @@
+# settings
+
+(GimpGegl-gegl-snn-mean-config "2020-07-15 02:39:48"
+    (time 1594755588)
+    (radius 8)
+    (pairs 2))
+(GimpGegl-gegl-snn-mean-config "2020-01-26 11:02:02"
+    (time 1580011322)
+    (radius 22)
+    (pairs 2))
+(GimpGegl-gegl-snn-mean-config "2020-01-13 13:56:04"
+    (time 1578898564)
+    (radius 18)
+    (pairs 2))
+(GimpGegl-gegl-snn-mean-config "2020-01-13 13:54:21"
+    (time 1578898461)
+    (radius 6)
+    (pairs 2))
+(GimpGegl-gegl-snn-mean-config "2020-01-13 13:51:19"
+    (time 1578898279)
+    (radius 46)
+    (pairs 2))
+(GimpGegl-gegl-snn-mean-config "2019-11-27 22:49:04"
+    (time 1574869744)
+    (radius 17)
+    (pairs 2))
+(GimpGegl-gegl-snn-mean-config "2019-04-17 09:40:24"
+    (time 1555468824)
+    (radius 1)
+    (pairs 1))
+
+# end of settings

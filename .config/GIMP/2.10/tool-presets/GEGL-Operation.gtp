@@ -1,0 +1,17 @@
+# GIMP tool preset file
+
+(icon-name "gimp-gegl")
+(name "GEGL Operation")
+(tool-options "GimpFilterOptions"
+    (tool "gimp-operation-tool")
+    (foreground (color-rgb 0.549020 0.835294 0.466667)))
+(use-fg-bg no)
+(use-brush no)
+(use-dynamics no)
+(use-mypaint-brush no)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

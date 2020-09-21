@@ -1,0 +1,12 @@
+# settings
+
+(GimpGegl-gegl-tile-glass-config "2020-03-27 15:41:00"
+    (time 1585298460)
+    (tile-width 32)
+    (tile-height 32))
+(GimpGegl-gegl-tile-glass-config "2019-04-27 11:21:20"
+    (time 1556338880)
+    (tile-width 12)
+    (tile-height 12))
+
+# end of settings

@@ -4,51 +4,51 @@
 
 #network
 super + F1
-    nm-connection-editor
+      nm-connection-editor
 
 #text
 super + F2
-    termite -e 'emacs' 
+      termite -e 'emacs' 
 
 #gimp
 super + F3
-    gimp
+      gimp
 
 #gnumeric
 super + F4
-    gnumeric
+      gnumeric
 
 #libreoffice writer
 super + F5
-    lowriter
+      abiword
 
 #electrum
 super + F6
-    electrum
+      electrum
 
 #lxappearance
 super + F7
-    lxappearance
+      lxappearance
 
 #xev
 super + F8
-    urxvtc -e xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+      urxvtc -e xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 
 #mail
 super + F9
-    thunderbird
+      thunderbird
 
 #pass
 super + F10
-    keepassxc
+      keepassxc
 
 #font manager
 super + F11
-    font-manager
+      font-manager
 
 #character map
 super + F12
-    gucharmap
+      gucharmap
 
 #########################
 # SUPER + ..  KEYS      #
@@ -56,91 +56,91 @@ super + F12
 
 #toggle fullscreen window
 super + f
-    bspc node --state \~fullscreen
+      bspc node --state \~fullscreen
 
 #music player
 super + m
-    pavucontrol
+      pavucontrol
 
 #toggle floating window
 #super + w
         
 #popup terminal
 super + t
-    urxvtc -name htop
+      urxvtc -name htop
 
-#galculator
+#calculator
 super + c
-    galculator
+      galculator
 
 #leafpad
 super + n
-    leafpad
+      leafpad
 
 #vpn
 super + v
-    mullvad-vpn
+      mullvad-vpn
 
 #gcolor3
 super + g
-    gcolor3
+      gcolor3
 
 #rofi
 super + grave
-    rofi -combi-modi window,drun,ssh -theme fancy -font "IBMPlexMono 12" -show combi -icon-theme "lehua" -show-icons
+      rofi -combi-modi window,drun,ssh -theme fancy -font "IBMPlexMono 13" -show combi -icon-theme "lehua" -show-icons
 
-#tor
+#youtube
 super + b
-    tor-browser
+      notify-send "mpv loading $(xclip -o)"; mpv --player-operation-mode=pseudo-gui "$(xclip -o)" || notify-send 'mpv error'
 
 #meld
 super + y
-    meld
+      meld
 
 #flip layout
-super + z
-    bspc node @/ --rotate {90,-90}
+super + s
+      bspc node @/ --rotate {90,-90}
     
 #surf
 #super + e
-    #surf localhost:8080/imp/
+       #surf localhost:8080/imp/
 
 #chromium
 super + e
-    chromium
+      chromium
 
-#logout
+#lock
 super + x
-    oblogout
+      slock
     
 #chromium-private
 super + r
-    chromium --incognito
+      chromium --incognito
 
 #xkill
 super + Escape
-    xkill
+      xkill
 
 #alternate between the tiled and monocle layout
 super + d
-	bspc desktop -l next
+      bspc desktop -l next
     
 #kill window
 super + q
-    bspc node -c
+      bspc node -c
 
 #terminal
 super + Return
-    urxvtc
+      urxvtc
       
 #terminal
 #super + Return
-    #bspc rule -a Termite -o desktop=focused && termite -c /home/blacklung/.config/termite/config10
+       #bspc rule -a Termite -o desktop=focused && termite -c /home/blacklung/.config/termite/config10
 
 #Keyboard dependent
 #Terminal emulator
 #super + KP_Enter
-#    urxvt
+       #urxvt
 
 #########################
 # SUPER + SHIFT KEYS    #
@@ -148,48 +148,59 @@ super + Return
 
 #file manager
 super + shift + Return
-    pcmanfm-qt
+      pcmanfm-qt
 
 #keyboard dependent
 #file manager
 #super + shift + KP_Enter
-#    pcmanfm-qt
+       #pcmanfm-qt
    
 #reload bspwm
 super + shift + r
-    ~/.config/bspwm/bspwmrc
+      ~/.config/bspwm/bspwmrc
 
 #reload sxhkd:
 super + shift + s
-    pkill -USR1 -x sxhkd
+      pkill -USR1 -x sxhkd
 
 #underfilemanager
 super + shift + i
-    bspc node --presel-dir \~{south} && pcmanfm-qt
+      bspc node --presel-dir \~{south} && pcmanfm-qt
 #web browser
 super + shift + w
-    firefox
+      GTK_THEME=HighContrast luakit
 
-#iceweasel private
+#firefox private
 super + shift + p
-    firefox --private-window
+      firefox --private-window
 
 #kill mullvad
 super + shift + v
-    pkill mullvad
+      pkill mullvad
 
 #logout
 super + shift + x
-    bspc quit
+      bspc quit
 
-#screen locker
+#restart
+super + shift + Escape
+      reboot
+
+#shutdown
+super + shift + End
+      shutdown -h now
+
+#suspend
 super + shift + z
-    slimlock
+      systemctl suspend
 
 #south term 
 super + shift + t
-    bspc node --presel-dir \~{south} && urxvtc
+      bspc node --presel-dir \~{south} && urxvtc
 
+#reload compose key
+super + shift + Pause
+      setxkbmap -option compose:paus
 #########################
 #     SCREENSHOTS       #
 #########################
@@ -200,7 +211,7 @@ Print
 
 #screeenshooter
 ctrl + Print
-    gnome-screenshot -i
+     gnome-screenshot -i
 
 #########################
 #     MULTIMEDIA KEYS   #
@@ -266,102 +277,102 @@ XF86MonBrightnessDown
 
 #focus selected desktop FOR QWERTY KEYBOARDS
 super + {1-9,0}
-    bspc desktop -f '^{1-9,10}'
+      bspc desktop -f '^{1-9,10}'
 
 #focus selected desktop	FOR AZERTY KEYBOARDS
 #super + {ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
-#    bspc desktop -f '^{1-9,10}'
+       #bspc desktop -f '^{1-9,10}'
 
 #################################################################
 
 #move window to selected desktop FOR QWERTY KEYBOARDS
 super + shift + {1-9,0}
-    id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
+      id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
 
 #move window to selected desktop FOR AZERTY KEYBOARDS
 #super + shift + {ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
-#    id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
+       #id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
 
 #################################################################
 
 #focus previous selected desktop
 super + shift + Tab
-    bspc desktop -f prev
+      bspc desktop -f prev
 
 #focus next selected desktop
 super + Tab
-    bspc desktop -f next
+      bspc desktop -f next
 
 #floating window
 super + a
-    bspc node --state \~floating
+      bspc node --state \~floating
 
 #focus/swap windows by direction
 super + {_,shift + }{h,j,k,l}
-    bspc node --{focus,swap} {west,south,north,east}
+      bspc node --{focus,swap} {west,south,north,east}
 
 #focus/swap windows by direction
 ctrl + super + {Left,Down,Up,Right}
-    bspc node --{focus} {west,south,north,east}
+     bspc node --{focus} {west,south,north,east}
 
 #flip layout vertically/horizontally
 super + {_,shift + }a
-    bspc node @/ --flip {vertical,horizontal}
+      bspc node @/ --flip {vertical,horizontal}
 
 #expand tiled space
 ctrl + shift + {h,j,k,l}
-    bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+     bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
 
 #contract tiled space
 ctrl + super + {h,j,k,l}
-    bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
+     bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
 
 #increase/decrease window gap on focused desktop
 super + bracket{left,right}
-    bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 5 ))
+      bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 5 ))
 
 #move floating window
 super + {_,shift + }{Left,Down,Up,Right}
-    ~/.config/bspwm/scripts/move-window {_,edge-}{west,south,north,east}
+      ~/.config/bspwm/scripts/move-window {_,edge-}{west,south,north,east}
 
 #resize floating window
 #super + grave
-    #bspc pointer -t %i %i
+       #bspc pointer -t %i %i
 
 #set the window state
 super + w
-    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+      bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 #focus parent/brother/first/second for preselection
 super + ctrl + {e,r,t,y}
-    bspc node --focus @{parent,brother,first,second}
+      bspc node --focus @{parent,brother,first,second}
 
 #preselect the splitting area for next window on leaf/parent
 super + {u,i,o,p}
-    bspc node --presel-dir \~{west,south,north,east}
+      bspc node --presel-dir \~{west,south,north,east}
 super + ctrl + {u,i,o,p}
-    bspc node --presel-dir \~{west,south,north,east}
+      bspc node --presel-dir \~{west,south,north,east}
 
 #define splitting ratio for next window on leaf/parent
 super + ctrl + {_,shift +}{1-9}
-    bspc node {_,@/} --presel-ratio 0.{1-9}
+      bspc node {_,@/} --presel-ratio 0.{1-9}
 
 #cancel preselection
 super + space
-    bspc node --presel-dir cancel
+      bspc node --presel-dir cancel
 
 super + ctrl + space
-    bspc node --presel-dir cancel
+      bspc node --presel-dir cancel
 
 # Switch focus between the windows of the current desktop
-super + s
-    bspc node -f {next,prev}.local
+super + z
+      bspc node -f {next,prev}.local
 
 super + equal
-    bspc node 'next.local.floating' -f
+      bspc node 'next.local.floating' -f
 
 super + minus
-    bspc node 'next.local.tiled' -f
+      bspc node 'next.local.tiled' -f
 
 #########################
 # NEW KEYBINDINGS       #
@@ -369,14 +380,14 @@ super + minus
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+      bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+      bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # go to previous and next node
 super + {semicolon,apostrophe}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+      bspc wm -h off; \
+      bspc node {older,newer} -f; \
+      bspc wm -h on

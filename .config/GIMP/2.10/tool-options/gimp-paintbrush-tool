@@ -1,0 +1,16 @@
+# GIMP gimp-paintbrush-tool options
+
+(foreground (color-rgb 1 1 1))
+(background (color-rgb 0.59999999999999998 0.59999999999999998 0.59999999999999998))
+(brush "1. Pixel")
+(dynamics "Dynamics Off")
+(gradient "FG to Transparent")
+(palette "Plasma")
+(brush-size 15)
+(brush-spacing 0.20000000000000001)
+(brush-force 0.503)
+(use-smoothing yes)
+(smoothing-quality 89)
+(smoothing-factor 59.599999999999994)
+
+# end of gimp-paintbrush-tool options

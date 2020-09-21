@@ -1,0 +1,100 @@
+--------------------------
+-- Default luakit theme --
+--------------------------
+
+local theme = {}
+
+-- Default settings
+theme.font = "12px IBMPlexMono"
+theme.fg   = "#000"
+theme.bg   = "#fff"
+theme.fg_selected = theme.fg
+theme.bg_selected = "#73D2BC"
+theme.fg_disabled = "#FCE0E9"
+theme.bg_disabled = theme.bg
+
+-- Genaral colours
+theme.success_fg = "#73D283"
+theme.loaded_fg  = "#73AFD2"
+theme.error_fg = "#000"
+theme.error_bg = "#FCE0E9"
+
+-- Warning colours
+theme.warning_fg = "#000"
+theme.warning_bg = "#FCE0E9"
+
+-- Notification colours
+theme.notif_fg = "#000"
+theme.notif_bg = "#D2E6E2"
+
+-- Menu colours
+theme.menu_fg                   = "#000"
+theme.menu_bg                   = "#D2E6E2"
+theme.menu_selected_fg          = "#000"
+theme.menu_selected_bg          = "#73D2BC"
+theme.menu_title_bg             = "#73D283"
+theme.menu_primary_title_fg     = "#000"
+theme.menu_secondary_title_fg   = "#000"
+
+theme.menu_disabled_fg = "#FCE0E9"
+theme.menu_disabled_bg = theme.menu_bg
+theme.menu_enabled_fg = theme.menu_fg
+theme.menu_enabled_bg = theme.menu_bg
+theme.menu_active_fg = "#A973D2"
+theme.menu_active_bg = theme.menu_bg
+
+-- Proxy manager
+theme.proxy_active_menu_fg      = '#000'
+theme.proxy_active_menu_bg      = '#D2E6E2'
+theme.proxy_inactive_menu_fg    = '#000'
+theme.proxy_inactive_menu_bg    = '#FCE0E9'
+
+-- Statusbar specific
+theme.sbar_fg         = "#000"
+theme.sbar_bg         = "#73D283"
+
+-- Downloadbar specific
+theme.dbar_fg         = "#000"
+theme.dbar_bg         = "#73AFD2"
+theme.dbar_error_fg   = "#FCE0E9"
+
+-- Input bar specific
+theme.ibar_fg           = "#000"
+theme.ibar_bg           = "#D2E6E2"
+
+-- Tab label
+theme.tab_fg            = "#fff"
+theme.tab_bg            = "#0F2422"
+theme.tab_hover_bg      = "#8C2D7C"
+theme.tab_ntheme        = "#D2E6E2"
+theme.selected_fg       = "#fff"
+theme.selected_bg       = "#2D8C76"
+theme.selected_ntheme   = "#D2E6E2"
+theme.loading_fg        = "#73D2BC"
+theme.loading_bg        = "#000"
+
+theme.selected_private_tab_bg = "#568C2D"
+theme.private_tab_bg    = "#430C12"
+
+-- Trusted/untrusted ssl colours
+theme.trust_fg          = "#73D283"
+theme.notrust_fg        = "#430C12"
+
+-- Follow mode hints
+theme.hint_font = "12px IBMPlexMono"
+theme.hint_fg = "#2D8C76"
+theme.hint_bg = "fff"
+theme.hint_border = "1px dashed #D27389"
+theme.hint_overlay_bg = "#998C2D7C"
+theme.hint_overlay_border = "1px dotted #73D283"
+theme.hint_overlay_selected_bg = "#9973D283"
+theme.hint_overlay_selected_border = theme.hint_overlay_border
+
+-- General colour pairings
+theme.ok = { fg = "#000", bg = "#FFF" }
+theme.warn = { fg = "#FCE0E9", bg = "#FFF" }
+theme.error = { fg = "#FCE0E9", bg = "#FFF" }
+
+return theme
+
+-- vim: et:sw=4:ts=8:sts=4:tw=80

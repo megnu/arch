@@ -1,0 +1,28 @@
+# settings
+
+(GimpGegl-gegl-fractal-trace-config "2019-04-17 09:22:00"
+    (time 1555467720)
+    (fractal mandelbrot)
+    (X1 0.298000)
+    (X2 -1.702000)
+    (Y1 -1.089000)
+    (Y2 1.000000)
+    (JX 0.500000)
+    (JY 0.500000)
+    (depth 3)
+    (bailout 10000.000000)
+    (abyss-policy loop))
+(GimpGegl-gegl-fractal-trace-config "2019-03-24 22:26:33"
+    (time 1553441193)
+    (fractal mandelbrot)
+    (X1 -1.000000)
+    (X2 0.500000)
+    (Y1 -1.000000)
+    (Y2 1.000000)
+    (JX 0.500000)
+    (JY 0.500000)
+    (depth 3)
+    (bailout 10000.000000)
+    (abyss-policy loop))
+
+# end of settings

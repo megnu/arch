@@ -4,7 +4,7 @@
 xterm*faceName: IBMPlexMono
 xterm*loginShell: true
 xterm*vt100*geometry: 90x34
-xterm*faceSize: 10
+xterm*faceSize: 12
 xterm*allowBoldFonts: false
 xterm*assumeAllChars: true
 xterm*wideChars: true
@@ -21,16 +21,16 @@ xterm*background: #000000
 ! colors
 !black dark/light
 xterm*color0:    #000000
-xterm*color8:    #430C12
+xterm*color8:    #FCE0E9
 !red dark/light
-xterm*color1:    #8C502D
+xterm*color1:    #430C12
 xterm*color9:    #D27389
 !green dark/light
 xterm*color2:    #568C2D
 xterm*color10:   #73D283
 !yellow dark/light
-xterm*color3:    #D2CF73
-xterm*color11:   #FCE0E9
+xterm*color3:    #D19573
+xterm*color11:   #D2CF73
 !blue dark/light
 xterm*color4:    #2D308C
 xterm*color12:   #73AFD2
@@ -83,7 +83,7 @@ URxvt*colorUL:      	 #D27389
 ! colors
 !black dark/light
 URxvt*color0:    #000000
-URxvt*color8:    #430C12
+URxvt*color8:    #FCE0E9
 !red dark/light
 URxvt*color1:    #8C502D
 URxvt*color9:    #D27389
@@ -91,8 +91,8 @@ URxvt*color9:    #D27389
 URxvt*color2:    #568C2D
 URxvt*color10:   #73D283
 !yellow dark/light
-URxvt*color3:    #D2CF73
-URxvt*color11:   #FCE0E9
+URxvt*color3:    #D19573
+URxvt*color11:   #D2CF73
 !blue dark/light
 URxvt*color4:    #2D308C
 URxvt*color12:   #73AFD2
@@ -107,11 +107,11 @@ URxvt*color7:    #D2E6E2
 URxvt*color15:   #FFFFFF
 ! fonts
 URxvt*letterSpace:      -1
-URxvt*font:             xft:IBMPlexMono:regular:size=11,Noto Color Emoji:size=9
-URxvt*imFont:           xft:IBMPlexMono:regular:size=11
-URxvt*boldFont:         xft:IBMPlexMono:bold:size=11
-URxvt*italicFont:       xft:IBMPlexMono:italic:size=11
-URxvt*boldItalicFont:   xft:IBMPlexMono:regular:size=11
+URxvt*font:             xft:IBMPlexMono:regular:size=12,Noto Color Emoji:size=10
+URxvt*imFont:           xft:IBMPlexMono:regular:size=12
+URxvt*boldFont:         xft:IBMPlexMono:bold:size=12
+URxvt*italicFont:       xft:IBMPlexMono:italic:size=12
+URxvt*boldItalicFont:   xft:IBMPlexMono:regular:size=12
 ! run :.!fc-list | grep <font-name>
 ! perl extensions
 URxvt*perl-ext-common:  default,clipboard,url-select,keyboard-select,resize-font
@@ -124,8 +124,8 @@ URxvt*keysym.M-C-v:     perl:clipboard:paste_escaped
 URxvt*keysym.M-Escape:  perl:keyboard-select:activate
 URxvt*keysym.M-s:       perl:keyboard-select:search
 URxvt*keysym.M-u:       perl:url-select:select_next
-URxvt*resize-font.smaller:	C-Down
-URxvt*resize-font.bigger:	C-Up
+URxvt*resize-font.smaller:	C-minus
+URxvt*resize-font.bigger:	C-equal
 URxvt*urlLauncher:      firefox
 URxvt*underlineURLs:    true
 URxvt*urlButton:        1
@@ -146,7 +146,7 @@ UXTerm*termName:        xterm-256color
 UXTerm*cursorColor:     #73D275
 UXTerm*VT100.geometry:  90x30
 UXTerm*font:            IBMPlexMono
-UXTerm*faceSize:        10
+UXTerm*faceSize:        12
 UXTerm*dynamicColors:   true
 UXTerm*utf8:            2
 UXTerm*eightBitInput:   true
@@ -164,7 +164,7 @@ UXTerm*foreground:      rgb:00/00/00
 ! colors
 !black dark/light
 UXTerm*color0:    #000000
-UXTerm*color8:    #430C12
+UXTerm*color8:    #FCE0E9
 !red dark/light
 UXTerm*color1:    #8C502D
 UXTerm*color9:    #D27389
@@ -172,8 +172,8 @@ UXTerm*color9:    #D27389
 UXTerm*color2:    #568C2D
 UXTerm*color10:   #73D283
 !yellow dark/light
-UXTerm*color3:    #D2CF73
-UXTerm*color11:   #FCE0E9
+UXTerm*color3:    #D19573
+UXTerm*color11:   #D2CF73
 !blue dark/light
 UXTerm*color4:    #2D308C
 UXTerm*color12:   #73AFD2

@@ -1,0 +1,13 @@
+# settings
+
+(GimpGegl-gegl-recursive-transform-config "2019-08-18 01:41:22"
+    (time 1566067282)
+    (transform "matrix (1, 0, 0, 0, 1, 0, 0, 0, 1)")
+    (first-iteration 0)
+    (iterations 3)
+    (fade-color (color-rgba 0.000000 0.000000 0.000000 0.000000))
+    (fade-opacity 1.000000)
+    (paste-below no)
+    (sampler-type linear))
+
+# end of settings
